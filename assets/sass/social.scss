@@ -1,0 +1,73 @@
+.social-icons a {
+  background: #09356F;
+}
+.social-icons a.facebook:hover {
+  background-color: #02549F;
+}
+.social-icons a.vk:hover {
+  background-color: #4C75A3;
+}
+.social-icons a.vimeo:hover {
+  background-color: #1AB7EA;
+}
+.social-icons a.tumblr:hover {
+  background-color: #35465D;
+}
+.social-icons a.twitter:hover {
+  background-color: #00ACED;
+}
+.social-icons a.behance:hover {
+  background-color: #1769FF;
+}
+.social-icons a.instagram:hover {
+  background-color: #DDCCBA;
+}
+.social-icons a.pinterest:hover {
+  background-color: #CD2129;
+}
+.social-icons a.flickr:hover {
+  background-color: #FF0084;
+}
+.social-icons a.dribbble:hover {
+  background-color: #EA4C89;
+}
+.social-icons a.google:hover {
+  background-color: #D11516;
+}
+.social-icons a.youtube:hover {
+  background-color: #E12A27;
+}
+.social-icons a.linkedin:hover {
+  background-color: #006699;
+}
+.social-icons a.skype:hover {
+  background-color: #00A7E5;
+}
+/* Social Share Group */
+.social-share a {
+  color: #888888;
+  display: inline-block;
+  padding: 0px;
+  margin: 0px 8px 0px 0px;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  border: 2px solid #e6e6e6;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.social-share a .fa {
+  font-size: 15px;
+}
+.social-share a:hover {
+  color: #fff;
+  border-color: #29b6f6;
+  background-color: #29b6f6;
+}

@@ -1,0 +1,38 @@
+.panel-title { font-size: 20px; text-transform: none; font-weight: 400; padding: 0; position: relative; }
+.panel-title > a {
+  font-size: 14px;
+  text-transform: uppercase;
+  display: block;
+  padding: 14px 40px 14px 30px;
+  background-color: $primary-color;
+  color: #fff !important;
+}
+.panel-title > a:after {
+  color: #fff;
+  content:'-';
+  position: absolute;
+  font-size: 22px;
+  right: 27px;
+  top: 12px;
+}
+.panel-title > a:hover { background-color: $secondary-color; text-decoration: none; }
+.panel-title > a.collapsed { background-color: $secondary-color; }
+.panel-title > a.collapsed:hover { background-color: $primary-color; }
+.panel-title > a.collapsed:after { content:'+'; right: 24px; top: 14px; font-size: 22px; }
+.panel { box-shadow: none; }
+.panel-group .panel { border-radius: 0;/* border-left: 0; border-right: 0; border-bottom: 0; */background-color: transparent; }
+.panel-default > .panel-heading { background-color: transparent; color: inherit; position: relative; border: none; border-radius: 0; padding: 0; }
+.panel-heading { padding: 16px 0px 14px 16px; }
+.panel-heading[class*="rt-icon-"]:before { position: absolute; font-size: 20px; color:#e16657; left: 16px; }
+.panel-default { border-color: transparent; }
+.panel-default+.panel-default { border-top-color: rgba(255,255,255,0.1); }
+.panel-group .panel + .panel { margin-top: 9px; }
+.panel-group .panel-heading + .panel-collapse .panel-body {
+  padding-top: 37px;
+  padding-bottom: 22px;
+  padding-left: 37px;
+  border-right: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  border-top: none;
+}

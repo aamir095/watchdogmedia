@@ -1,0 +1,42 @@
+.wpcf7-form input[type=text],
+.wpcf7-form input[type=email],
+.wpcf7-form input[type=password],
+.wpcf7-form textarea {
+  border: 1px solid #e8e6e6;
+  background: #f4f6f7;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  color: #a1b1bc;
+  padding: 10px 20px 11px;
+  outline: none;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+}
+.wpcf7-form input[type=text]:focus,
+.wpcf7-form input[type=email]:focus,
+.wpcf7-form input[type=password]:focus,
+.wpcf7-form textarea:focus {
+  background-color: #fff;
+  border-color: #29b6f6;
+  color: #1b1b1b;
+}
+.col-full {
+  width: 100%;
+}
+.col-one-third {
+  float: left;
+  width: 31.5%;
+  margin-bottom: 20px;
+}
+.margin-one-third {
+  margin-right: 2.626%;
+  margin-left: 2.626%;
+}
+.wpcf7-form textarea {
+  min-height: 150px;
+  margin-top: 3px;
+}

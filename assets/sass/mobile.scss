@@ -1,0 +1,66 @@
+/* #Media Queries
+================================================== */
+@media only screen and (max-width: 767px) {
+
+  section, #content, .content {
+    padding: 20px 0 20px 0;
+  }
+
+  .feature-box,
+  .about-box {
+    margin-top: 40px;
+  }
+
+  .latest-projects .latest-projects-wrapper,
+  .latest-projects .latest-projects-intro {
+    float: none;
+    width: 100%;
+  }
+  .newsletter-element .input-text,
+  .newsletter-element .newsletter-submit {
+    margin-top: 20px;
+  }
+  .projects-grid-5 .project-item {
+    width: 50%;
+  }
+  .about-history {
+    margin-top: 35px;
+  }
+  .pricing-item {
+    margin-bottom: 20px;
+  }
+  .pricing-table-2 {
+    width: 100%;
+    margin: 10px 0px !important;
+  }
+  .blog-list .post-media {
+    width: 100%;
+    float: none;
+    margin-bottom: 20px;
+  }
+  .blog-list .post-content {
+    padding-left: 0px;
+  }
+  .post-metadata {
+    margin: 10px 0px 10px;
+  }
+  footer .main-footer .widget-title {
+    margin-bottom: 15px;
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+
+  #logo img{
+    height: 35px;
+    margin-top: 16px;
+
+  }
+
+  #section-about .about-box p{
+    text-align: justify;
+  }
+
+}

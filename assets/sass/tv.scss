@@ -1,0 +1,35 @@
+
+@import "variables.scss";
+
+#section-tv .television {
+
+   position:relative;
+  .layer {
+    opacity: 0;
+    background: $secondary-color;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+
+      -webkit-transition: all 0.4s ease-out;
+      -moz-transition: all 0.4s ease-out;
+      -ms-transition: all 0.4s ease-out;
+      -o-transition: all 0.4s ease-out;
+      transition: all 0.4s ease-out;
+
+
+
+  }
+
+}
+
+#section-tv .television .layer:hover{
+  opacity: 0.9;
+}
+
+
+
+
