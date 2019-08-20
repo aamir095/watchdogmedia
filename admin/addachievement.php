@@ -1,22 +1,15 @@
 <!-- Header Here -->
 <?php include 'layouts/header.php';
-$userId = $_GET['ref'];
-$user = getBlogById($conn,$userId);
 
  if(isset($_POST['savebtn']))
  {
- 	if (!empty($_FILES["file"]['tmp_name']))
- 	{
  		
- 		$_POST['image_path']=uploadBlogImage('uploads',$_FILES['file']);
- 		@unlink("uploads/".$user['image_path']);
- 	}
-
- 	if(updateBlog($conn,$_POST))
+ 	if(addachievement($conn,$_POST))
  	{
+ 	
  		
- 		showMsg('Blog Updated Successfully.','success');
- 		redirection('manageblogs.php');
+ 		showMsg('New Achievement Added Successfully.','success');
+ 		redirection('manageachievements.php');
  	}
  }
 ?>
@@ -45,9 +38,9 @@ $user = getBlogById($conn,$userId);
 			</li>
 
 			<li>
-				<a href="#">Blogs & Events</a>
+				<a>Achievement</a>
 			</li>
-			<li class="active">Update Blogs</li>
+			<li class="active">Add Achievement</li>
 		</ul><!-- .breadcrumb -->
 
 		<!-- #nav-search -->
@@ -56,10 +49,10 @@ $user = getBlogById($conn,$userId);
 		<div class="page-content">
 		<div class="page-header">
 			<h1>
-				Blogs and Events
+				Achievement
 				<small>
 					<i class="icon-double-angle-right"></i>
-					Add Blog
+					Add New Achievement
 				</small>
 			</h1>
 			
@@ -69,112 +62,129 @@ $user = getBlogById($conn,$userId);
 			<div class="col-xs-12">
 				<!-- PAGE CONTENT BEGINS -->
 
-				
-					<div class="row">
-			<div class="col-xs-12">
-				<!-- PAGE CONTENT BEGINS -->
-					
+				<form class="form-horizontal" method="POST" role="form" enctype="multipart/form-data">
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Title </label>
+
+						<div class="col-sm-9">
+							<input type="text" name="title" id="form-field-1" required placeholder="Title of the achievement" class="col-xs-10 col-sm-5" />
+						</div>
+					</div>
+
+
+
 
 					<script src="../ckeditor/ckeditor.js"></script>
-				<form class="form-horizontal" method="POST" role="form" enctype="multipart/form-data">
-					<div class="form-group">
-						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> <b>Blog Title:</b> </label>
-
-						<div class="col-sm-9">
-							<textarea name="blog_title" id="editor1" rows="10" cols="80" class="col-xs-10 col-sm-5" > <?php echo $user['blog_title']; ?>
-               
-            </textarea>
-            <script>
-                // Replace the <textarea id="editor1"> with a CKEditor
-                // instance, using default configuration.
-                CKEDITOR.replace( 'blog_title' );
-                CKEDITOR.add
-               
-            </script>
-						</div>
-					</div>
-
-					<div class="row">
-			<div class="col-xs-12">
-					
-				<form class="form-horizontal" method="POST" role="form" enctype="multipart/form-data">
-					<div class="form-group">
-						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> <b>Blog Description:</b> </label>
-
-						<div class="col-sm-9">
-							<textarea name="blog_description" id="editor2" rows="10" cols="80" class="col-xs-10 col-sm-5" > <?php echo $user['blog_description']; ?>
-               
-            </textarea>
-            <script>
-                // Replace the <textarea id="editor1"> with a CKEditor
-                // instance, using default configuration.
-                CKEDITOR.replace( 'blog_description' );
-                CKEDITOR.add
-            </script>
-						</div>
-					</div>
-					</textarea>
-
-					<div class="space-4"></div>
-
-					<div class="form-group">
-						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> <strong>Meta-KeyWords: </strong></label>
-
-						<div class="col-sm-9">
-				<textarea   name="meta_keywords" rows="3" cols="80"><?php echo $user['meta_keywords']; ?></textarea>
-						</div>
-					</div>
-					<div class="space-4"></div>
-
-						<div class="space-4"></div>
-
-					<div class="form-group">
-						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> <strong>Meta-Description: </strong></label>
-
-						<div class="col-sm-9">
-							<textarea   name="meta_description" rows="3" cols="80"><?php echo $user['meta_description']; ?></textarea>
-						</div>
-					</div>
-		
 				
-							<div class="row">
-			<div class="col-xs-12">
+					<div class="space-4"></div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Achievement Description</label>
+
+						<div class="col-sm-9">
+							<textarea name="achievement_description" id="editor3" rows="10" cols="80" class="col-xs-10 col-sm-5" placeholder="abc">
+               
+            </textarea>
+            <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'achievement_description' );
+                CKEDITOR.add
+               
+            </script>
+						</div>
+					</div>
+
+
 					<div class="space-4"></div>
 
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-2">Start Date Year:</label>
+
+						<div class="col-sm-9">
+							<input type="text" name="start_year" required id="form-field-2" placeholder="Start date in year of project" class="col-xs-10 col-sm-5" />
+							
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-2">Start Date Month:</label>
+
+					<div class="col-sm-9">
+						
+					<select name="start_month">
+				    <option value=''>--Select Month--</option>
+				    <option selected value='Jan'>Janaury</option>
+				    <option value='Feb'>February</option>
+				    <option value='March'>March</option>
+				    <option value='April'>April</option>
+				    <option value='May'>May</option>
+				    <option value='June'>June</option>
+				    <option value='July'>July</option>
+				    <option value='Aug'>August</option>
+				    <option value='Sept'>September</option>
+				    <option value='Oct'>October</option>
+				    <option value='Nov'>November</option>
+				    <option value='Dec'>December</option>
+				    </select> 		
+					</div>
+					</div>
+					
+					<div class="space-4"></div>
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">End Date Year</label>
+
+						<div class="col-sm-9">
+							<input type="text" name="end_year" id="form-field-1"  placeholder="End date in  year of project" class="col-xs-10 col-sm-5" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-2">End Date Month:</label>
+
+					<div class="col-sm-9">
+						
+					<select name="end_month">
+				    <option value=''>--Select Month--</option>
+				    <option  value='Jan'>Janaury</option>
+				    <option value='Feb'>February</option>
+				    <option value='March'>March</option>
+				    <option value='April'>April</option>
+				    <option value='May'>May</option>
+				    <option value='June'>June</option>
+				    <option value='July'>July</option>
+				    <option value='Aug'>August</option>
+				    <option value='Sept'>September</option>
+				    <option value='Oct'>October</option>
+				    <option value='Nov'>November</option>
+				    <option value='Dec'>December</option>
+				    </select> 		
+					</div>
+					</div>
+					<div class="space-4"></div>
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Client</label>
+
+						<div class="col-sm-9">
+							<input type="text" name="client" id="form-field-1" required placeholder="Name of client" class="col-xs-10 col-sm-5" />
+						</div>
+					</div>
+
+					<div class="space-4"></div>
 					<div class="form-group">
 						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Status </label>
 
 						<div class="col-sm-9">
 							<select class="col-xs-10 col-sm-5" name="status">
-								<option value="active" <?php if($user['status']=='active') echo 'selected="selected"';  ?>>Active</option>
-								<option value="in_active" <?php if($user['status']=='in_active') echo 'selected="selected"';  ?>>In-Active</option>
+								<option value="ongoing">Ongoing</option>
+								<option value="completed">Completed</option>
 							</select>
 						</div>
 					</div>
-				</div>
-			</div>
 
-					<?php if(!empty($user['image_path'])): ?>
-					<div class="space-4"></div>
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Existing Image </label> 
-						<div class="col-sm-9">
-							<img src="uploads/<?php echo $user['image_path'];?>" width=50%, height=200 px>
-					</div>
-				</div>
 
-					<?php endif; ?>
 					<div class="space-4"></div>
-				<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Upload Image </label>
 
-						<div class="col-sm-9">
-							<input type="file" name="file" id="form-field-1"  class="col-xs-10 col-sm-5" />
-						</div>
-					</div>
-					
-					<div class="space-4"></div>
-					<input type="hidden" name="id" value="<?php  echo $user['id']; ?>">
 					<div class="clearfix form-actions">
 						<div class="col-md-offset-3 col-md-9">
 							<button name="savebtn" class="btn btn-info" type="submit">
@@ -205,7 +215,6 @@ $user = getBlogById($conn,$userId);
 		</div><!-- /.row -->
 		</div><!-- /.page-content -->
 		</div><!-- /.main-content -->
-
 
 		<!--[if !IE]> -->
 

@@ -21,13 +21,13 @@
 		<ul class="breadcrumb">
 		<li>
 		<i class="icon-home home-icon"></i>
-		<a href="#">Home</a>
+		Home
 		</li>
 
 		<li>
-		<a href="#">Projects</a>
+		TV Programs
 		</li>
-		<li class="active">Manage Projects
+		<li class="active">Manage Programs
 		</ul><!-- .breadcrumb -->
 
 		<!-- #nav-search -->
@@ -35,31 +35,16 @@
 
 		<div class="page-content">
 		<div class="page-header">
-		<div class="form-group">
-			<label class="col-sm-6 control-label no-padding-right" for="form-field-1"> Selcet Category to Filter </label>
-							<div class="col-sm-6">
-							<select name="Project Category" onchange="getCategoryWiseData(this.value)" id="project_category" class="form-control">
-								<option value="">Select Project Category</option>
-								<?php $projectcategory=getAllProjectCategory($conn); 
-							foreach ($projectcategory as $key => $category):?>
-
-								
-								<option onclick="myfunction()" <?php if(isset($_GET['cat_id']) && $_GET['cat_id']==$category['category_id']) echo 'selected="selected"'; ?> value="<?php echo $category['category_id']?>"><?php echo ucwords($category['project_category']);?></option>
-
-								<?php  endforeach; ?>
-							</select>
-						</div>
-					</div>
+		
 
 		<div class="hr hr-18 dotted hr-double"></div>
 
 		<div class="row">
 		<div class="col-xs-12">
 		<?php displayMsg();  ?>
-
-						<!--<input type="button" value="Search Projects" onclick="myfunction()"> -->
+		
 		<div class="table-header">
-		SEDS All Projects
+		TV Programs
 		</div>
 
 		<div class="table-responsive">
@@ -69,36 +54,21 @@
 		<th class="center">
 			S.No
 		</th>
-		<th>TItle</th>
+		<th>Program Title</th>
 		
-		<th>Description</th>
-		<th>Location</th>
-		<th>Start Date</th>
+		<th class="hidden-480">Program Description</th>
 
-		<th class="hidden-480">End Date</th>
-
-		<th>
-			Client
-		</th>
-		<th>Image</th>
-
-		<th>Project Category</th>
-		<th>Display In Website</th>
 		<th class="hidden-480">Status</th>
-
 		
+		<th>Image</th>
 		<th>Action</th>
 		</tr>
 		</thead>
 
 		<tbody>
-	   <?php 
-	   $category_id = @$_GET['cat_id'];
-	   $users = getAllProjects($conn,$category_id);
-	  
+	   <?php $users = getAllPrograms($conn);
 	   	if($users):
-	   	foreach ($users as $key => $user): 
-	   	
+	   	foreach ($users as $key => $user):
 	   	?>		
 		<tr>
 		<td class="center">
@@ -106,33 +76,27 @@
 		</td>
 
 		<td>
-			<?php echo ucwords($user['title']); ?>
+			<?php echo $user['tv_title']; ?>
 		</td>
-		<td><?php echo $string=substr($user['project_description'],0,80); ?></td>
-		<td><?php echo $user['location']; ?></td>
-		<td><?php echo $user['start_date']; ?></td>
-		<td class="hidden-480"><?php echo $user['end_date']; ?></td>
-		<td><?php echo $user['client']; ?></td>
-		<?php if(!empty($user['image_path'])):?>
-		<td><img src="uploads/<?php echo $user['image_path']; ?>" width='100px' height='70px'></td>
+		
+		<td class="hidden-480"><?php echo $string=substr($user['tv_description'],0,80)."....."; ?></td>
+		
+		<td class="hidden-480">
+			<?php if($user['status']=='active'): ?>
+			<span class="label label-sm label-success">Active</span>
+			<?php else: ?>
+			<span class="label label-sm label-danger">Inactive</span>
+			<?php endif; ?>	
+		</td>
+
+			<?php if(!empty($user["image_path"])): ?> 
+		<td><img src="uploads/<?php echo $user['image_path'] ?>" height=50 px, width=100 px></td>
+
 		<?php else: ?>
 			<td>No Image Found</td>
-		<?php endif; ?>
-		<td><?php echo ucwords($user['project_category']);  ?></td>
-		<td class="hidden-480">
-			<?php if($user['display_status']=='display'): ?>
-			<span class="label label-sm label-success">&#10004;</span>
-			<?php else: ?>
-			<span class="label label-sm label-danger">&#10006;</span>
-			<?php endif; ?>	
-		</td>
-		<td class="hidden-480">
-			<?php if($user['status']=='ongoing'): ?>
-			<span class="label label-sm label-success">Ongoing</span>
-			<?php else: ?>
-			<span class="label label-sm label-danger">Completed</span>
-			<?php endif; ?>	
-		</td>
+	
+		<?php endif; ?>	
+
 
 		<td>
 			<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
@@ -140,11 +104,11 @@
 					<i class="icon-zoom-in bigger-130"></i>
 				</a>
 
-				<a class="green" href="updateproject.php?ref=<?php echo $user['id']; ?>">
+				<a class="green" href="updateprogram.php?ref=<?php echo $user['id']; ?>">
 					<i class="icon-pencil bigger-130"></i>
 				</a>
 
-				<a class="red" href="deleteproject.php?ref=<?php echo $user['id']; ?>" onclick="return confirm('Are You Sure to Delete ?');">
+				<a class="red" href="deleteprogram.php?ref=<?php echo $user['id']; ?>" onclick="return confirm('Are You Sure to Delete ?');">
 					<i class="icon-trash bigger-130"></i>
 				</a>
 			</div>
@@ -207,17 +171,8 @@
 		<!-- basic scripts -->
 
 		<!--[if !IE]> -->
+
 		<script type="text/javascript">
-			
-			function getCategoryWiseData(category_id)
-			{
-				window.location.href='manageproject.php?cat_id='+category_id;
-			}
-
-
-		</script>
-
-		<script type="text/javascript"> 
 		window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
 		</script>
 

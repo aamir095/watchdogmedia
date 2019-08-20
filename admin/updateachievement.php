@@ -1,16 +1,17 @@
 <!-- Header Here -->
 <?php include 'layouts/header.php';
+$userId = $_GET['ref'];
+$user = getAchievementById($conn,$userId);
 
  if(isset($_POST['savebtn']))
  {
- 	
- 	$_POST['image_path']=uploadimage('uploads',$_FILES['file']);
- 	if(insertBlog($conn,$_POST))
- 	{
 
- 		showMsg('Blog Created Successfully.','success');
- 		redirection('manageblogs.php');
- 	 }
+ 	if(updateAchievement($conn,$_POST))
+ 	{
+ 		
+ 		showMsg('Achievement Updated Successfully.','success');
+ 		redirection('manageachievements.php');
+ 	}
  }
 ?>
 		<div class="main-container" id="main-container">
@@ -34,125 +35,157 @@
 		<ul class="breadcrumb">
 			<li>
 				<i class="icon-home home-icon"></i>
-				Home
+				<a href="#">Home</a>
 			</li>
 
 			<li>
-				Blog
+				<a href="#">Achievement</a>
 			</li>
-			<li class="active">Add Blog</li>
+			<li class="active">Update Achievement</li>
 		</ul><!-- .breadcrumb -->
-
 		<!-- #nav-search -->
 		</div>
 
 		<div class="page-content">
 		<div class="page-header">
 			<h1>
-				Blog Editor
+				Achievement
 				<small>
 					<i class="icon-double-angle-right"></i>
-					Add Blog
+					Update Existing Achievement
 				</small>
 			</h1>
 			
 		</div><!-- /.page-header -->
 
-		
-
-					<div class="row">
+		<div class="row">
 			<div class="col-xs-12">
 				<!-- PAGE CONTENT BEGINS -->
-					
 
-					<script src="../ckeditor/ckeditor.js"></script>
 				<form class="form-horizontal" method="POST" role="form" enctype="multipart/form-data">
 					<div class="form-group">
-						<label class="col-sm-2 control-label no-padding-right" for="form-field-1" required> <b>Blog Title:</b> </label>
+						<label class="col-sm-3 control-label no-padding-right"  for="form-field-1">Title:</label>
 
 						<div class="col-sm-9">
-							<textarea name="blog_title" id="editor1" rows="10" cols="80" class="col-xs-10 col-sm-5" required="">
+							<input type="text" name="title" id="form-field-1" value="<?php echo $user['title']; ?>" required placeholder="Title of project" class="col-xs-10 col-sm-5" />
+						</div>
+					</div>
+
+					
+					<script src="../ckeditor/ckeditor.js"></script>
+				
+					<div class="space-4"></div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Achievement Description:</label>
+
+						<div class="col-sm-9">
+							<textarea name="achievement_description" id="editor3" rows="10" cols="80" class="col-xs-10 col-sm-5" ><?php echo $user['achievement_description']; ?>
                
             </textarea>
             <script>
                 // Replace the <textarea id="editor1"> with a CKEditor
                 // instance, using default configuration.
-                CKEDITOR.replace( 'blog_title' );
+                CKEDITOR.replace( 'achievement_description' );
                 CKEDITOR.add
                
             </script>
 						</div>
 					</div>
 
-					<div class="row">
-			<div class="col-xs-12">
-					
-				<form class="form-horizontal" method="POST" role="form" enctype="multipart/form-data" >
-					<div class="form-group">
-						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> <b>Blog Description:</b> </label>
-
-						<div class="col-sm-9">
-							<textarea name="blog_description" id="editor2" rows="10" cols="80" class="col-xs-10 col-sm-5" required>
-               
-            </textarea>
-            <script>
-                // Replace the <textarea id="editor1"> with a CKEditor
-                // instance, using default configuration.
-                CKEDITOR.replace( 'blog_description' );
-                CKEDITOR.add
-            </script>
-						</div>
-					</div>
-					</textarea>
-		
-					
+			
 					<div class="space-4"></div>
 
 					<div class="form-group">
-						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> <strong>Meta-KeyWords: </strong></label>
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-2">Start Date Year:</label>
 
 						<div class="col-sm-9">
-							<textarea   name="meta_keywords" rows="3" cols="80" placeholder="Space Seperated Keywords"></textarea>
-						</div>
-					</div>
-					<div class="space-4"></div>
-
-						<div class="space-4"></div>
-
-					<div class="form-group">
-						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> <strong>Meta-Description: </strong></label>
-
-						<div class="col-sm-9">
-							<textarea   name="meta_description" rows="3" cols="80"  placeholder="120-159 Character meta description"></textarea>
-						</div>
-					</div>
-					<div class="space-4"></div>
-
-					<div class="form-group">
-						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> <strong>Status: </strong></label>
-
-						<div class="col-sm-9">
-							<select class="col-xs-10 col-sm-5" name="status" required="">
-								<option value="active">Active</option>
-								<option value="in_active">In-Active</option>
-							</select>
-						</div>
-					</div>
-
-						<div class="space-4"></div>
-
-					<div class="form-group">
-						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> <strong>Image: </strong></label>
-
-						<div class="col-sm-9">
-							<input type="file" name="file" class="btn btn-success" required="">
+							<input type="text" name="start_year" value="<?php echo $user['start_year']; ?>" required id="form-field-2" placeholder="Start date in year of project" class="col-xs-10 col-sm-5" />
 							
 						</div>
 					</div>
 
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-2">Start Date Month:</label>
+
+					<div class="col-sm-9">
+						
+					<select name="start_month">
+				    <option value=''>--Select Month--</option>
+				    <option  value='Jan' <?php if($user['start_month']=='Jan') echo 'selected="selected"';  ?>>Janaury</option>
+				    <option value='Feb'  <?php if($user['start_month']=='Feb') echo 'selected="selected"';  ?>>February</option>
+				    <option value='March' <?php if($user['start_month']=='March') echo 'selected="selected"';  ?>>March</option>
+				    <option value='April' <?php if($user['start_month']=='April') echo 'selected="selected"';  ?>>April</option>
+				    <option value='May' <?php if($user['start_month']=='May') echo 'selected="selected"';  ?>>May</option>
+				    <option value='June' <?php if($user['start_month']=='June') echo 'selected="selected"';  ?>>June</option>
+				    <option value='July' <?php if($user['start_month']=='July') echo 'selected="selected"';  ?>>July</option>
+				    <option value='Aug' <?php if($user['start_month']=='Aug') echo 'selected="selected"';  ?>>August</option>
+				    <option value='Sept' <?php if($user['start_month']=='Sept') echo 'selected="selected"';  ?>>September</option>
+				    <option value='Oct' <?php if($user['start_month']=='Oct') echo 'selected="selected"';  ?>>October</option>
+				    <option value='Nov' <?php if($user['start_month']=='Nov') echo 'selected="selected"';  ?>>November</option>
+				    <option value='Dec' <?php if($user['start_month']=='Dec') echo 'selected="selected"';  ?>>December</option>
+				    </select> 		
+					</div>
+					</div>
+					
+					<div class="space-4"></div>
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">End Date Year</label>
+
+						<div class="col-sm-9">
+							<input type="text" name="end_year" value="<?php echo $user['end_year']; ?>" id="form-field-1"  placeholder="End date in  year of project" class="col-xs-10 col-sm-5" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-2">End Date Month:</label>
+
+					<div class="col-sm-9">
+						
+					<select name="end_month">
+						<option value=''>--Select Month--</option>
+				    <option  value='Jan' <?php if($user['end_month']=='Jan') echo 'selected="selected"';  ?>>Janaury</option>
+				    <option value='Feb'  <?php if($user['end_month']=='Feb') echo 'selected="selected"';  ?>>February</option>
+				    <option value='March' <?php if($user['end_month']=='March') echo 'selected="selected"';  ?>>March</option>
+				    <option value='April' <?php if($user['end_month']=='April') echo 'selected="selected"';  ?>>April</option>
+				    <option value='May' <?php if($user['end_month']=='May') echo 'selected="selected"';  ?>>May</option>
+				    <option value='June' <?php if($user['end_month']=='June') echo 'selected="selected"';  ?>>June</option>
+				    <option value='July' <?php if($user['end_month']=='July') echo 'selected="selected"';  ?>>July</option>
+				    <option value='Aug' <?php if($user['end_month']=='Aug') echo 'selected="selected"';  ?>>August</option>
+				    <option value='Sept' <?php if($user['end_month']=='Sept') echo 'selected="selected"';  ?>>September</option>
+				    <option value='Oct' <?php if($user['end_month']=='Oct') echo 'selected="selected"';  ?>>October</option>
+				    <option value='Nov' <?php if($user['end_month']=='Nov') echo 'selected="selected"';  ?>>November</option>
+				    <option value='Dec' <?php if($user['end_month']=='Dec') echo 'selected="selected"';  ?>>December</option>
+				    </select> 		
+					</div>
+					</div>
+
 
 					<div class="space-4"></div>
 
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Client</label>
+
+						<div class="col-sm-9">
+							<input type="text" name="client" id="form-field-1" value="<?php echo $user['client']; ?>" required placeholder="Client Name" class="col-xs-10 col-sm-5" />
+						</div>
+					</div>
+
+					<div class="space-4"></div>
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Status </label>
+
+						<div class="col-sm-9">
+							<select class="col-xs-10 col-sm-5" name="status">
+								<option value="ongoing" <?php if($user['status']=='ongoing') echo 'selected="selected"';  ?>>Ongoing</option>
+								<option value="completed" <?php if($user['status']=='completed') echo 'selected="selected"';  ?>>Completed</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="space-4"></div>
+					<input type="hidden" name="id" value="<?php  echo $user['id']; ?>">
 					<div class="clearfix form-actions">
 						<div class="col-md-offset-3 col-md-9">
 							<button name="savebtn" class="btn btn-info" type="submit">
@@ -179,9 +212,11 @@
 				
 
 				
+			</div><!-- /.col -->
+		</div><!-- /.row -->
+		</div><!-- /.page-content -->
+		</div><!-- /.main-content -->
 
-
-		<!-- basic scripts -->
 
 		<!--[if !IE]> -->
 

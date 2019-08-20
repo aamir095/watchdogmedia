@@ -4,10 +4,10 @@
  if(isset($_POST['savebtn']))
  {
  	$_POST['image_path']=uploadimage('uploads',$_FILES['file']);
- 	if(insertFlight($conn,$_POST))
+ 	if(insertPartner($conn,$_POST))
  	{
- 		showMsg('New Flight Created Successfully.','success');
- 		redirection('manageflights.php');
+ 		showMsg('New Partner Created Successfully.','success');
+ 		redirection('managepartners.php');
  	}
  }
 ?>
@@ -36,9 +36,9 @@
 			</li>
 
 			<li>
-				Flight
+				Partner
 			</li>
-			<li class="active">Add Flight</li>
+			<li class="active">Add Partner</li>
 		</ul><!-- .breadcrumb -->
 
 		<!-- #nav-search -->
@@ -47,10 +47,10 @@
 		<div class="page-content">
 		<div class="page-header">
 			<h1>
-				Flight Form
+				Partner Form
 				<small>
 					<i class="icon-double-angle-right"></i>
-					Add Flight
+					Add Partner
 				</small>
 			</h1>
 			
@@ -62,49 +62,20 @@
 
 				<form class="form-horizontal" method="POST" role="form" enctype="multipart/form-data">
 					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Flight Name:</label>
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Partner Name:</label>
 
 						<div class="col-sm-9">
-							<input type="text" name="flight_name" id="form-field-1" required placeholder="Name Of Flight" class="col-xs-10 col-sm-5" />
+							<input type="text" name="partner_name" id="form-field-1" required placeholder="Name Of Partner" class="col-xs-10 col-sm-5" />
 						</div>
 					</div>
 
 					<div class="space-4"></div>
 
 					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">From: </label>
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Website</label>
 
 						<div class="col-sm-9">
-							<input type="text" name="from_origin" id="form-field-1" required placeholder="Origin Place" class="col-xs-10 col-sm-5" />
-						</div>
-					</div>
-
-
-					<div class="space-4"></div>
-
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> To:  </label>
-							<div class="col-sm-9">
-							<input type="text" name="to_destination" id="form-field-1" required placeholder="Destination Place" class="col-xs-10 col-sm-5" />
-							
-						</div>
-					</div>
-					<div class="space-4"></div>
-
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-2">Original Price:</label>
-							<div class="col-sm-9">
-							<input type="text" name="original_price" id="form-field-1" required placeholder="Rate Badayera Vanni" class="col-xs-10 col-sm-5" />
-							
-						</div>
-					</div>
-					<div class="space-4"></div>
-
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-2">Discount Price:</label>
-							<div class="col-sm-9">
-							<input type="text" name="discount_price" id="form-field-1" required placeholder="Ticket Bechni Rate" class="col-xs-10 col-sm-5" />
-							
+							<input type="text" name="website" id="form-field-1" required placeholder="Official website" class="col-xs-10 col-sm-5" />
 						</div>
 					</div>
 

@@ -87,7 +87,7 @@
 					<div class="space-4"></div>
 
 					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Position </label>
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Position </label>
 
 						<div class="col-sm-9">
 							<select class="col-xs-10 col-sm-5" name="position">

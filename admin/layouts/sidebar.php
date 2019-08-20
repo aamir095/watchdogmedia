@@ -71,24 +71,24 @@
 					<ul class="nav nav-list">
 						<li>
 							<a href="#" class="dropdown-toggle">
-								<i class="icon-book"></i>
-								<span class="menu-text"> Blogs & Events </span>
+								<i class="icon-desktop"></i>
+								<span class="menu-text">TV Program</span>
 
 								<b class="arrow icon-angle-down"></b>
 							</a>
 
 							<ul class="submenu">
 								<li>
-									<a href="addblog.php">
+									<a href="addprogram.php">
 										<i class="icon-double-angle-right"></i>
-										Add Blog
+										Add TV Program
 									</a>
 								</li>
 
 								<li>
-									<a href="manageblogs.php">
+									<a href="manageprogram.php">
 										<i class="icon-double-angle-right"></i>
-										Manage Blogs
+										Manage TV Programs
 									</a>
 								</li>
 
@@ -127,24 +127,24 @@
 					<ul class="nav nav-list">
 						<li>
 							<a href="#" class="dropdown-toggle">
-								<i class="icon-fighter-jet"></i>
-								<span class="menu-text"> Flights </span>
+								<i class="icon-exchange"></i>
+								<span class="menu-text"> Our Partners </span>
 
 								<b class="arrow icon-angle-down"></b>
 							</a>
 
 							<ul class="submenu">
 								<li>
-									<a href="addflight.php">
+									<a href="addpartner.php">
 										<i class="icon-double-angle-right"></i>
-										Add Flight
+										Add Partner
 									</a>
 								</li>
 
 								<li>
-									<a href="manageflights.php">
+									<a href="managepartners.php">
 										<i class="icon-double-angle-right"></i>
-										Manage Flights									</a>
+										Manage Partners									</a>
 								</li>
 
 								
@@ -187,24 +187,24 @@
 						<ul class="nav nav-list">
 						<li>
 							<a href="#" class="dropdown-toggle">
-								<i class="icon-briefcase"></i>
-								<span class="menu-text">Projects</span>
+								<i class="icon-certificate"></i>
+								<span class="menu-text">Achievement</span>
 
 								<b class="arrow icon-angle-down"></b>
 							</a>
 
 							<ul class="submenu">
 								<li>
-									<a href="addproject.php">
+									<a href="addachievement.php">
 										<i class="icon-double-angle-right"></i>
-										Add Project
+										Add Achievement
 									</a>
 								</li>
 
 								<li>
-									<a href="manageproject.php">
+									<a href="manageachievements.php">
 										<i class="icon-double-angle-right"></i>
-										 Manage Projects
+										 Manage Achievement
 									</a>
 								</li>
 

@@ -1,7 +1,7 @@
 <!-- Header Here -->
 <?php include 'layouts/header.php';
 $flightId = $_GET['ref'];
-$flight = getFlightById($conn,$flightId);
+$flight = getPartnerById($conn,$flightId);
 
 
  if(isset($_POST['savebtn']))
@@ -14,10 +14,10 @@ $flight = getFlightById($conn,$flightId);
  		
  	}
 
- 	if(updateFlight($conn,$_POST))
+ 	if(updatePartner($conn,$_POST))
  	{
- 		showMsg('Flight Updated Successfully.','success');
- 		redirection('manageflights.php');
+ 		showMsg('Our Partner Updated Successfully.','success');
+ 		redirection('managepartners.php');
  	}
  }
 ?>
@@ -46,9 +46,9 @@ $flight = getFlightById($conn,$flightId);
 			</li>
 
 			<li>
-				<a href="#">Flight</a>
+				<a href="#">Partner</a>
 			</li>
-			<li class="active">Update Flight</li>
+			<li class="active">Update Partner</li>
 		</ul><!-- .breadcrumb -->
 
 			<!-- #nav-search -->
@@ -57,10 +57,10 @@ $flight = getFlightById($conn,$flightId);
 		<div class="page-content">
 		<div class="page-header">
 			<h1>
-				Flight Form
+				Partner Form
 				<small>
 					<i class="icon-double-angle-right"></i>
-					Add Flight
+					Add Partner
 				</small>
 			</h1>
 			
@@ -76,51 +76,24 @@ $flight = getFlightById($conn,$flightId);
 
 				<form class="form-horizontal" method="POST" role="form" enctype="multipart/form-data">
 					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Flight Name:</label>
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Partner Name:</label>
 
 						<div class="col-sm-9">
-							<input type="text" name="flight_name" id="form-field-1"  value="<?php  echo $flight['flight_name']; ?>"required placeholder="Name Of Flight" class="col-xs-10 col-sm-5" />
+							<input type="text" name="partner_name" id="form-field-1"  value="<?php  echo $flight['partner_name']; ?>"required placeholder="Name Of Partner" class="col-xs-10 col-sm-5" />
 						</div>
 					</div>
 
 					<div class="space-4"></div>
 
 					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">From: </label>
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Website: </label>
 
 						<div class="col-sm-9">
-							<input type="text" name="from_origin" id="form-field-1"   value="<?php  echo $flight['from_origin']; ?>" required placeholder="Origin Place" class="col-xs-10 col-sm-5" />
+							<input type="text" name="website" id="form-field-1"   value="<?php  echo $flight['website']; ?>" required placeholder="Origin Place" class="col-xs-10 col-sm-5" />
 						</div>
 					</div>
 
 
-					<div class="space-4"></div>
-
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> To:  </label>
-							<div class="col-sm-9">
-							<input type="text" name="to_destination" id="form-field-1"  value="<?php  echo $flight['to_destination']; ?>" required placeholder="Destination Place" class="col-xs-10 col-sm-5" />
-							
-						</div>
-					</div>
-					<div class="space-4"></div>
-
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-2">Original Price:</label>
-							<div class="col-sm-9">
-							<input type="text" name="original_price" id="form-field-1"  value="<?php  echo $flight['original_price']; ?>" required placeholder="Rate Badayera Vanni" class="col-xs-10 col-sm-5" />
-							
-						</div>
-					</div>
-					<div class="space-4"></div>
-
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-2">Discount Price:</label>
-							<div class="col-sm-9">
-							<input type="text" name="discount_price" id="form-field-1"  value="<?php  echo $flight['discount_price']; ?>" required placeholder="Ticket Bechni Rate" class="col-xs-10 col-sm-5" />
-							
-						</div>
-					</div>
 						<div class="space-4"></div>
 
 					<div class="form-group">

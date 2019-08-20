@@ -1,4 +1,6 @@
-		<?php include 'layouts/header.php'; ?>
+		<?php include 'layouts/header.php'; 
+		$compare='ongoing';
+		?>
 
 		<div class="main-container" id="main-container">
 		<script type="text/javascript">
@@ -21,13 +23,13 @@
 		<ul class="breadcrumb">
 		<li>
 		<i class="icon-home home-icon"></i>
-		Home
+		<a href="#">Home</a>
 		</li>
 
 		<li>
-		BLogs & Events
+		<a>Achievements</a>
 		</li>
-		<li class="active">Manage Blogs
+		<li class="active">Manage Achievements
 		</ul><!-- .breadcrumb -->
 
 		<!-- #nav-search -->
@@ -35,16 +37,19 @@
 
 		<div class="page-content">
 		<div class="page-header">
-		
+		<div class="form-group">
+			
+							
 
 		<div class="hr hr-18 dotted hr-double"></div>
 
 		<div class="row">
 		<div class="col-xs-12">
 		<?php displayMsg();  ?>
-		
+
+						<!--<input type="button" value="Search Projects" onclick="myfunction()"> -->
 		<div class="table-header">
-		Blogs and Events
+		All Achievements
 		</div>
 
 		<div class="table-responsive">
@@ -54,21 +59,24 @@
 		<th class="center">
 			S.No
 		</th>
-		<th>Blog Title</th>
+		<th>TItle</th>
 		
-		<th class="hidden-480">Blog Description</th>
-
+		<th>Achievement Description</th>
+		<th>Start Date</th>
+		<th>End Date</th>
+		<th>Client</th>
 		<th class="hidden-480">Status</th>
-		<th>Date</th>
-		<th>Image</th>
 		<th>Action</th>
 		</tr>
 		</thead>
 
 		<tbody>
-	   <?php $users = getAllBlogs($conn);
+	   <?php 
+	   $users = getAllAchievements($conn);
+	  
 	   	if($users):
-	   	foreach ($users as $key => $user):
+	   	foreach ($users as $key => $user): 
+	   	
 	   	?>		
 		<tr>
 		<td class="center">
@@ -76,28 +84,25 @@
 		</td>
 
 		<td>
-			<?php echo $user['blog_title']; ?>
+			<?php echo ucwords($user['title']); ?>
 		</td>
-		
-		<td class="hidden-480"><?php echo $string=substr($user['blog_description'],0,80)."....."; ?></td>
+		<td><?php echo $string=substr($user['achievement_description'],0,80); ?></td>
+		<td><?php echo $user['start_month'].",".$user['start_year']; ?></td>
+
+		<?php if($user['status']== $compare): ?>
+		<td class="hidden-480"><?php echo $user['status']; ?></td>
+		<?php else: ?>
+			<td><?php echo $user['end_month'].",".$user['end_year']; ?></td>
+	<?php endif; ?>
+		<td><?php echo $user['client']; ?></td>
 		
 		<td class="hidden-480">
-			<?php if($user['status']=='active'): ?>
-			<span class="label label-sm label-success">Active</span>
+			<?php if($user['status']=='ongoing'): ?>
+			<span class="label label-sm label-success">Ongoing</span>
 			<?php else: ?>
-			<span class="label label-sm label-danger">Inactive</span>
+			<span class="label label-sm label-danger">Completed</span>
 			<?php endif; ?>	
 		</td>
-		<td><?php echo $user['created_date']; ?></td>
-
-			<?php if(!empty($user["image_path"])): ?> 
-		<td><img src="uploads/<?php echo $user['image_path'] ?>" height=50 px, width=100 px></td>
-
-		<?php else: ?>
-			<td>No Image Found</td>
-	
-		<?php endif; ?>	
-
 
 		<td>
 			<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
@@ -105,11 +110,11 @@
 					<i class="icon-zoom-in bigger-130"></i>
 				</a>
 
-				<a class="green" href="updateblog.php?ref=<?php echo $user['id']; ?>">
+				<a class="green" href="updateachievement.php?ref=<?php echo $user['id']; ?>">
 					<i class="icon-pencil bigger-130"></i>
 				</a>
 
-				<a class="red" href="deleteblog.php?ref=<?php echo $user['id']; ?>" onclick="return confirm('Are You Sure to Delete ?');">
+				<a class="red" href="deleteachievement.php?ref=<?php echo $user['id']; ?>" onclick="return confirm('Are You Sure to Delete ?');">
 					<i class="icon-trash bigger-130"></i>
 				</a>
 			</div>
@@ -172,8 +177,17 @@
 		<!-- basic scripts -->
 
 		<!--[if !IE]> -->
-
 		<script type="text/javascript">
+			
+			function getCategoryWiseData(category_id)
+			{
+				window.location.href='manageproject.php?cat_id='+category_id;
+			}
+
+
+		</script>
+
+		<script type="text/javascript"> 
 		window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
 		</script>
 

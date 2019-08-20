@@ -1,24 +1,22 @@
 <!-- Header Here -->
 <?php include 'layouts/header.php';
 $userId = $_GET['ref'];
-$user = getProjectById($conn,$userId);
+$user = getProgramById($conn,$userId);
 
  if(isset($_POST['savebtn']))
  {
-
- 	 if (!empty($_FILES["file"]['tmp_name']))
-
+ 	if (!empty($_FILES["file"]['tmp_name']))
  	{
- 		$_POST["image_path"]=uploadimageinproject('uploads',$_FILES["file"]);
+ 		
+ 		$_POST['image_path']=uploadProgramImage('uploads',$_FILES['file']);
  		@unlink("uploads/".$user['image_path']);
  	}
 
-
- 	if(updateProject($conn,$_POST))
+ 	if(updateProgram($conn,$_POST))
  	{
  		
- 		showMsg('Project Updated Successfully.','success');
- 		redirection('manageproject.php');
+ 		showMsg('TV Program Updated Successfully.','success');
+ 		redirection('manageprogram.php');
  	}
  }
 ?>
@@ -43,25 +41,26 @@ $user = getProjectById($conn,$userId);
 		<ul class="breadcrumb">
 			<li>
 				<i class="icon-home home-icon"></i>
-				<a href="#">Home</a>
+				Home
 			</li>
 
 			<li>
-				<a href="#">Project</a>
+				TV Program
 			</li>
-			<li class="active">Update Project</li>
+			<li class="active">Update Program</li>
 		</ul><!-- .breadcrumb -->
+
 		<!-- #nav-search -->
 		</div>
 
 		<div class="page-content">
 		<div class="page-header">
 			<h1>
-				Project
+				TV Program
 				<small>
 					<i class="icon-double-angle-right"></i>
-					Update Existing Project
-				</small>
+					Update Program
+									</small>
 			</h1>
 			
 		</div><!-- /.page-header -->
@@ -70,130 +69,84 @@ $user = getProjectById($conn,$userId);
 			<div class="col-xs-12">
 				<!-- PAGE CONTENT BEGINS -->
 
+				
+					<div class="row">
+			<div class="col-xs-12">
+				<!-- PAGE CONTENT BEGINS -->
+					
+
+					<script src="../ckeditor/ckeditor.js"></script>
 				<form class="form-horizontal" method="POST" role="form" enctype="multipart/form-data">
 					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right"  for="form-field-1"> Title </label>
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> <b>Program Title:</b> </label>
 
 						<div class="col-sm-9">
-							<input type="text" name="title" id="form-field-1" value="<?php echo $user['title']; ?>" required placeholder="Title of project" class="col-xs-10 col-sm-5" />
+							<input type="text" name="tv_title" value="<?php echo $user['tv_title'];?>" size="60">
+               
+            </textarea>
+         
 						</div>
 					</div>
 
+					<div class="row">
+			<div class="col-xs-12">
 					
-					<script src="../ckeditor/ckeditor.js"></script>
-				
-					<div class="space-4"></div>
+				<form class="form-horizontal" method="POST" role="form" enctype="multipart/form-data">
 					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> <b>Project Description</b> </label>
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> <b>Blog Description:</b> </label>
 
 						<div class="col-sm-9">
-							<textarea name="project_description" id="editor3" rows="10" cols="80" class="col-xs-10 col-sm-5" ><?php echo $user['project_description']; ?>
+							<textarea name="tv_description" id="editor2" rows="10" cols="80" class="col-xs-10 col-sm-5" > <?php echo $user['tv_description']; ?>
                
             </textarea>
             <script>
                 // Replace the <textarea id="editor1"> with a CKEditor
                 // instance, using default configuration.
-                CKEDITOR.replace( 'project_description' );
+                CKEDITOR.replace( 'tv_description' );
                 CKEDITOR.add
-               
             </script>
 						</div>
 					</div>
+					</textarea>
 
-
-					<div class="space-4"></div>
-
-
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Location </label>
-
-						<div class="col-sm-9">
-							<input type="text" name="location" id="form-field-1" value="<?php echo $user['location']; ?>" required placeholder="location of project" class="col-xs-10 col-sm-5" />
-						</div>
-					</div>
-
-				
+					
 					<div class="space-4"></div>
 
 					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Start Date </label>
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> <strong>Status: </strong></label>
 
-						<div class="col-sm-9">
-							<input type="text" name="start_date" id="form-field-1" value="<?php echo $user['start_date']; ?>" required placeholder="Starting date of project" class="col-xs-10 col-sm-5" />
-						</div>
-					</div>
-
-					<div class="space-4"></div>
-
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> End Date </label>
-
-						<div class="col-sm-9">
-							<input type="text" name="end_date" id="form-field-1" value="<?php echo $user['end_date']; ?>" required placeholder="Ending date of project" class="col-xs-10 col-sm-5" />
-						</div>
-					</div>
-
-					<div class="space-4"></div>
-
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Client</label>
-
-						<div class="col-sm-9">
-							<input type="text" name="client" id="form-field-1" value="<?php echo $user['client']; ?>" required placeholder="Client Name" class="col-xs-10 col-sm-5" />
-						</div>
-					</div>
-
-					<div class="space-4"></div>
-
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Display In Website </label>
-
-						<div class="col-sm-9">
-							<select class="col-xs-10 col-sm-5" name="display_status">
-								<option value="display" <?php if($user['display_status']=='display') echo 'selected="selected"';  ?>>&#10004;</option>
-								<option value="hide" <?php if($user['display_status']=='hide') echo 'selected="selected"';  ?>>&#10006;</option>
-							</select>
-						</div>
-					</div>
-
-				
-
-					<div class="space-4"></div>
-
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Status </label>
 
 						<div class="col-sm-9">
 							<select class="col-xs-10 col-sm-5" name="status">
-								<option value="ongoing" <?php if($user['status']=='ongoing') echo 'selected="selected"';  ?>>Ongoing</option>
-								<option value="completed" <?php if($user['status']=='completed') echo 'selected="selected"';  ?>>Completed</option>
+								<option value="active" <?php if($user['status']=='active') echo 'selected="selected"';  ?>>Active</option>
+								<option value="in_active" <?php if($user['status']=='in_active') echo 'selected="selected"';  ?>>In-Active</option>
 							</select>
 						</div>
 					</div>
-					<div class="space-4"></div>
+				</div>
+			</div>
+
+					<?php if(!empty($user['image_path'])): ?>
 					
-
 					<div class="space-4"></div>
 
 					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Existing Image</label>
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> <strong>Existing Image:</strong></label>
+
+							<img src="uploads/<?php echo $user['image_path'];?>" width=200 px, height=150 px>
+					</div>
+				</div>
+
+					<?php endif; ?>
+					<div class="space-6"></div>
+				<div class="form-group">
+		<label class="col-sm-2 control-label no-padding-right" for="form-field-3"><b>Upload New Image To Replace Existing: </b></label>
 
 						<div class="col-sm-9">
-						<img src="uploads/<?php  echo $user["image_path"];?>" width='200px' height='150px'>
+							<input type="file" name="file" id="form-field-1"  class="col-xs-12 col-sm-5" />
 						</div>
 					</div>
-
-
-					<div class="space-4"></div>
-
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Image</label>
-
-						<div class="col-sm-9">
-							
-							 <input class="btn btn-success"  type="file" name="file" id="form-field-1"  class="col-xs-10 col-sm-5" /> 
-						</div>
-					</div>
+					
 					<div class="space-4"></div>
 					<input type="hidden" name="id" value="<?php  echo $user['id']; ?>">
 					<div class="clearfix form-actions">
@@ -214,6 +167,7 @@ $user = getProjectById($conn,$userId);
 					
 
 				</form>
+
 
 				
 

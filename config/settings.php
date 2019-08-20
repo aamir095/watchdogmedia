@@ -1,5 +1,5 @@
 <?php
 define('DBSERVER', 'localhost');
-define('DBNAME', 'mymystictrip');
+define('DBNAME', 'watchdogmedia');
 define('DBUSER', 'root');
 define('DBPASS', '');

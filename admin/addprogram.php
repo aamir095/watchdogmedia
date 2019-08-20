@@ -3,17 +3,14 @@
 
  if(isset($_POST['savebtn']))
  {
- 
- 	$_POST['image_path']=uploadimageinproject('uploads',$_FILES['image_path']);
  	
- 		
- 	if(addproject($conn,$_POST))
+ 	$_POST['image_path']=uploadimage('uploads',$_FILES['file']);
+ 	if(insertProgram($conn,$_POST))
  	{
- 	
- 		
- 		showMsg('New Project Added Successfully.','success');
- 		redirection('manageproject.php');
- 	}
+
+ 		showMsg('TV Program Created Successfully.','success');
+ 		redirection('manageprogram.php');
+ 	 }
  }
 ?>
 		<div class="main-container" id="main-container">
@@ -37,13 +34,13 @@
 		<ul class="breadcrumb">
 			<li>
 				<i class="icon-home home-icon"></i>
-				<a href="#">Home</a>
+				Home
 			</li>
 
 			<li>
-				<a href="#">Project</a>
+				TV Program
 			</li>
-			<li class="active">Add Project</li>
+			<li class="active">Add TV Program</li>
 		</ul><!-- .breadcrumb -->
 
 		<!-- #nav-search -->
@@ -52,150 +49,87 @@
 		<div class="page-content">
 		<div class="page-header">
 			<h1>
-				Project
+				Program Editor
 				<small>
 					<i class="icon-double-angle-right"></i>
-					Add New Project
+					Add TV Program
 				</small>
 			</h1>
 			
 		</div><!-- /.page-header -->
 
-		<div class="row">
+		
+
+					<div class="row">
 			<div class="col-xs-12">
 				<!-- PAGE CONTENT BEGINS -->
-
-				<form class="form-horizontal" method="POST" role="form" enctype="multipart/form-data">
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Title </label>
-
-						<div class="col-sm-9">
-							<input type="text" name="title" id="form-field-1" required placeholder="Title of the project" class="col-xs-10 col-sm-5" />
-						</div>
-					</div>
-
-
-
+					
 
 					<script src="../ckeditor/ckeditor.js"></script>
-				
-					<div class="space-4"></div>
+				<form class="form-horizontal" method="POST" role="form" enctype="multipart/form-data">
 					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> <b>Project Description</b> </label>
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1" required><b>TV Program Title:</b> </label>
 
 						<div class="col-sm-9">
-							<textarea name="project_description" id="editor3" rows="10" cols="80" class="col-xs-10 col-sm-5" >All Details Of The Project
+							<input type="text" name="tv_title" size="60">
                
             </textarea>
             <script>
                 // Replace the <textarea id="editor1"> with a CKEditor
                 // instance, using default configuration.
-                CKEDITOR.replace( 'project_description' );
+                CKEDITOR.replace( 'blog_title' );
                 CKEDITOR.add
                
             </script>
 						</div>
 					</div>
 
-
-
-
-					<div class="space-4"></div>
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Location </label>
-
-						<div class="col-sm-9">
-							<input type="text" name="location" id="form-field-1" required placeholder="Location of project" class="col-xs-10 col-sm-5" />
-						</div>
-					</div>
-
-					<div class="space-4"></div>
-
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-2">Start Date</label>
-
-						<div class="col-sm-9">
-							<input type="date" name="start_date" required id="form-field-2" placeholder="Start date of project" class="col-xs-10 col-sm-5" />
-							
-						</div>
-					</div>
+					<div class="row">
+			<div class="col-xs-12">
 					
+				<form class="form-horizontal" method="POST" role="form" enctype="multipart/form-data" >
+					<div class="form-group">
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> <b>Program Description:</b> </label>
+
+						<div class="col-sm-9">
+							<textarea name="tv_description" id="editor2" rows="10" cols="80" class="col-xs-10 col-sm-5" required>
+               
+            </textarea>
+            <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'tv_description' );
+                CKEDITOR.add
+            </script>
+						</div>
+					</div>
+					</textarea>
+		
 					
-
 					<div class="space-4"></div>
 
 					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">End Date</label>
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> <strong>Status: </strong></label>
 
 						<div class="col-sm-9">
-							<input type="date" name="end_date" id="form-field-1" required placeholder="End date of project" class="col-xs-10 col-sm-5" />
-						</div>
-					</div>
-
-					<div class="space-4"></div>
-
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Client</label>
-
-						<div class="col-sm-9">
-							<input type="text" name="client" id="form-field-1" required placeholder="Name of client" class="col-xs-10 col-sm-5" />
-						</div>
-					</div>
-
-					<div class="space-4"></div>
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Project Category </label>
-
-
-						<div class="col-sm-9">
-							
-							<select name="category_id">
-								<option value="">Select Project Category</option>
-								<?php $projectcategory=getAllProjectCategory($conn); 
-							foreach ($projectcategory as $key => $category):?>
-								
-								<option value="<?php echo $category['category_id'];?>"><?php echo ucwords($category['project_category']); ?></option>
-
-									<?php  endforeach; ?>
-						</select>
-					</div>
-					</div>
-
-					<div class="space-4"></div>
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Display In Website </label>
-
-						<div class="col-sm-9">
-							<select class="col-xs-10 col-sm-5" name="display_status">
-								<option value="display">Yes</option>
-								<option value="hide">No</option>
+							<select class="col-xs-10 col-sm-5" name="status" required="">
+								<option value="active">Active</option>
+								<option value="in_active">In-Active</option>
 							</select>
 						</div>
 					</div>
 
-					<div class="space-4"></div>
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Status </label>
-
-						<div class="col-sm-9">
-							<select class="col-xs-10 col-sm-5" name="status">
-								<option value="ongoing">Ongoing</option>
-								<option value="completed">Completed</option>
-							</select>
-						</div>
-					</div>
-
-					<div class="space-4"></div>
+						<div class="space-4"></div>
 
 					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Image</label>
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> <strong>Image: </strong></label>
 
 						<div class="col-sm-9">
+							<input type="file" name="file" class="btn btn-success" required="">
 							
-							 <input class="btn btn-success"  type="file" name="image_path" id="form-field-1"  placeholder="Name of client" class="col-xs-10 col-sm-5" /> 
 						</div>
 					</div>
-					
+
 
 					<div class="space-4"></div>
 
@@ -225,10 +159,9 @@
 				
 
 				
-			</div><!-- /.col -->
-		</div><!-- /.row -->
-		</div><!-- /.page-content -->
-		</div><!-- /.main-content -->
+
+
+		<!-- basic scripts -->
 
 		<!--[if !IE]> -->
 

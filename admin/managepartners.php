@@ -25,9 +25,9 @@
 		</li>
 
 		<li>
-		Flights
+		Partners
 		</li>
-		<li class="active">Manage Flights</li>
+		<li class="active">Manage Partners</li>
 		</ul><!-- .breadcrumb -->
 
 		<!-- #nav-search -->
@@ -44,7 +44,7 @@
 		<?php displayMsg();  ?>
 		
 		<div class="table-header">
-		Flights Informations
+		Partners Informations
 		</div>
 
 		<div class="table-responsive">
@@ -54,11 +54,8 @@
 		<th class="center">
 			S.No
 		</th>
-		<th>Flight Name</th>
-		<th>From</th>
-		<th>To</th>
-		<th>Discount Price</th>
-		<th>Original Price</th>
+		<th>Partner Name</th>
+		<th>Official Website</th>
 		<th>Image</th>
 		<th>Status</th>
 		<th>Action</th>
@@ -66,7 +63,7 @@
 		</thead>
 
 		<tbody>
-	   <?php $users = getAllFlights($conn);
+	   <?php $users = getAllPartners($conn);
 	   	if($users):
 	   	foreach ($users as $key => $user):
 	   		
@@ -78,11 +75,8 @@
 
 		
 		
-		<td><?php echo $user['flight_name']; ?></td>
-		<td><?php echo $user['from_origin']; ?></td>
-		<td><?php echo $user['to_destination']; ?></td>
-		<td><?php echo $user['original_price']; ?></td>
-		<td><?php echo $user['discount_price']; ?></td>
+		<td><?php echo $user['partner_name']; ?></td>
+		<td><?php echo $user['website']; ?></td>
 		<?php if(!empty($user["image_path"])): ?> 
 		<td><img src="uploads/<?php echo $user['image_path'];?>" height=50 px, width=100 px></td>
 		<?php else: ?>
@@ -102,11 +96,11 @@
 					<i class="icon-zoom-in bigger-130"></i>
 				</a>
 
-				<a class="green" href="updateflight.php?ref=<?php echo $user['id']; ?>">
+				<a class="green" href="updatepartner.php?ref=<?php echo $user['id']; ?>">
 					<i class="icon-pencil bigger-130"></i>
 				</a>
 
-				<a class="red" href="deleteflight.php?ref=<?php echo $user['id']; ?>" onclick="return confirm('Are You Sure to Delete ?');">
+				<a class="red" href="deletepartner.php?ref=<?php echo $user['id']; ?>" onclick="return confirm('Are You Sure to Delete ?');">
 					<i class="icon-trash bigger-130"></i>
 				</a>
 			</div>

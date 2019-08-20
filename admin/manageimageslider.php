@@ -83,7 +83,7 @@
 			<?php echo ucwords($user['image_title']); ?>
 		</td>
 		<?php if (!empty($user['image_path'])): ?>
-		<td><img src="uploads/<?php echo $user['image_path'] ?>" height=50 px, width=200 px></td>
+		<td><img src="uploads/<?php echo $user['image_path'] ?>" height=50 px, width=100  px></td>
 		
 		<?php  else: ?>
 

@@ -20,7 +20,7 @@ if(isset($_POST['loginbtn']))
 <!-- Mirrored from 198.74.61.72/themes/preview/ace/login.html by HTTrack Website Copier/3.x [XR&CO'2013], Fri, 28 Feb 2014 17:46:42 GMT -->
 <head>
 		<meta charset="utf-8" />
-		<title>Login Page -MMT Admin</title>
+		<title>Login Page -WDM Admin</title>
 
 		<meta name="description" content="User login page" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -68,7 +68,7 @@ if(isset($_POST['loginbtn']))
 							<div class="center">
 								<h1>
 									<i class="icon-leaf green"></i>
-									<span class="red">MyMysticTrip <span class="white">Backend</span></span>
+									<span class="red">watchdogMedia <span class="white">Backend</span></span>
 									
 								</h1>
 								

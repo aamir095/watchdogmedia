@@ -59,9 +59,6 @@
 		<th>Email</th>
 		<th class="hidden-480">Telephone</th>
 
-		<th>
-			Subject
-		</th>
 		<th class="hidden-480">Message</th>
 		
 
@@ -85,7 +82,6 @@
 		</td>
 		<td><?php echo $user['email']; ?></td>
 		<td class="hidden-480"><?php echo $user['telephone']; ?></td>
-		<td><?php echo $user['subject']; ?></td>
 		<td><?php echo $user['message']; ?></td>
 
 	

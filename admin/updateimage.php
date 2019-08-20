@@ -107,6 +107,16 @@ $user = getImageById($conn,$userId);
 								<option value="8" <?php if($user['position']=='8') echo 'selected="selected"';  ?>>8</option>
 								<option value="9" <?php if($user['position']=='9') echo 'selected="selected"';  ?>>9</option>
 								<option value="10" <?php if($user['position']=='10') echo 'selected="selected"';  ?>>10</option>
+								<option value="11" <?php if($user['position']=='11') echo 'selected="selected"';  ?>>11</option>
+								<option value="12" <?php if($user['position']=='12') echo 'selected="selected"';  ?>>12</option>
+								<option value="13" <?php if($user['position']=='13') echo 'selected="selected"';  ?>>13</option>
+								<option value="14" <?php if($user['position']=='14') echo 'selected="selected"';  ?>>14</option>
+								<option value="15" <?php if($user['position']=='15') echo 'selected="selected"';  ?>>15</option>
+								<option value="16" <?php if($user['position']=='16') echo 'selected="selected"';  ?>>16</option>
+								<option value="17" <?php if($user['position']=='17') echo 'selected="selected"';  ?>>17</option>
+								<option value="18" <?php if($user['position']=='18') echo 'selected="selected"';  ?>>18</option>
+								<option value="19" <?php if($user['position']=='19') echo 'selected="selected"';  ?>>19</option>
+								<option value="20" <?php if($user['position']=='20') echo 'selected="selected"';  ?>>20</option>
 							</select>
 						</div>
 					</div>

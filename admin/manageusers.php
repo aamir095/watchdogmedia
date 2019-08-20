@@ -62,7 +62,7 @@
 			Contact
 		</th>
 		<th class="hidden-480">Role</th>
-		<th class="hidden-480">Status</th>
+		<th >Status</th>
 
 		<th>Action</th>
 		</tr>
@@ -87,7 +87,7 @@
 		<td><?php echo $user['contact']; ?></td>
 		<td><?php echo ucfirst($user['role']); ?></td>
 
-		<td class="hidden-480">
+		<td >
 			<?php if($user['status']=='active'): ?>
 			<span class="label label-sm label-success">Active</span>
 			<?php else: ?>
