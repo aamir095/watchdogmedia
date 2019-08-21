@@ -95,27 +95,27 @@ function deleteProgram($conn,$id)
 }
 function getAllActivePrograms($conn)
 {
-	$stmt= $conn->prepare("SELECT * FROM mmt_program WHERE status='active' ORDER BY id DESC LIMIT 2");
+	$stmt= $conn->prepare("SELECT * FROM mmt_program WHERE status='active' ORDER BY id DESC LIMIT 3");
 	$stmt->execute();
 	if($stmt->rowCount()>0)
 		return $stmt->fetchAll();
 
 	return false;
 }
-function getAllActiveListingBlogs($conn)
+function getAllActiveListingProgram($conn)
 {
 
-	$stmt= $conn->prepare("SELECT * FROM mmt_program WHERE status='active' ");
+	$stmt= $conn->prepare("SELECT * FROM mmt_program WHERE status='active' ORDER BY id DESC LIMIT 2 ");
 	$stmt->execute();
 	if($stmt->rowCount()>0)
 	return $stmt->fetchAll();
 
 	return false;
 }
-function getBlogsInBlogPage($conn)
+function getProgramInPage($conn)
 {
 
-	$stmt= $conn->prepare("SELECT * FROM mmt_program WHERE status='active'  ORDER BY id DESC LIMIT 10 ");
+	$stmt= $conn->prepare("SELECT * FROM mmt_program WHERE status='active'  ORDER BY id DESC ");
 	$stmt->execute();
 	if($stmt->rowCount()>0)
 	return $stmt->fetchAll();

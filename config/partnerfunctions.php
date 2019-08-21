@@ -42,7 +42,7 @@ function getAllPartners($conn)
 
 function getAllActivePartners($conn)
 {
-	$stmt=$conn->prepare("SELECT * FROM mmt_partner WHERE status='active' LIMIT 6");
+	$stmt=$conn->prepare("SELECT * FROM mmt_partner WHERE status='active' ");
 	$stmt->execute();
 	$stmt->setFetchMode(PDO::FETCH_ASSOC);
 	if($stmt->rowCount()>0)

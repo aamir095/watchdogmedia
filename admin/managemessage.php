@@ -87,12 +87,7 @@
 	
 		<td>
 			<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
-				<a class="blue" href="#">
-					<i class="icon-zoom-in bigger-130"></i>
-				</a>
-
 				
-
 				<a class="red" href="deletemessage.php?ref=<?php echo $user['id']; ?>" onclick="return confirm('Are You Sure to Delete ?');">
 					<i class="icon-trash bigger-130"></i>
 				</a>

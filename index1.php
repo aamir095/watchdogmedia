@@ -25,9 +25,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
     <link rel="manifest" href="assets/img/favicon/manifest.json">
 
-<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=59941d87ea00a30012ce6987&product=social-ab' async='async'></script>
-
-
 
     <title>WMS</title>
 
@@ -37,8 +34,107 @@
 
 <!----------------------------Header-----------------------------------
 ------------------------------------------------------------------------->
-<?php include'layouts/header.php'; ?> 
 
+<header class="site-header-1 site-header">
+    <!-- Main bar start -->
+    <div id="sticked-menu" class="main-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <!-- logo begin -->
+                    <div id="logo" class="pull-left">
+                        <a href="index.html">
+                            <img src="assets/img/logo.png" alt="" class="logo">
+                        </a>
+                    </div>
+                    <!-- logo close -->
+
+                    <!-- btn-mobile menu begin -->
+                    <a id="show-mobile-menu" class="btn-mobile-menu hidden-lg hidden-md"><i class="fa fa-bars"></i></a>
+                    <!-- btn-mobile menu close -->
+
+                    <!-- mobile menu begin -->
+                    <nav id="mobile-menu" class="site-mobile-menu hidden-lg hidden-md">
+                        <ul>
+                            <li class="active"><a href="index.php">Home</a>
+                            </li>
+                            <li class="active dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                                           role="button" aria-haspopup="true" aria-expanded="false">About
+                                Us<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="introduction.html">Introduction</a></li>
+                                    <li><a href="organization.html">Organizational Structure</a>
+                                   <!-- <li><a href="team.html">Staff Members</a></li> -->
+                                    <li><a href="technicalfacilities.html">Technical Facilities</a>
+                                </ul>
+                            </li>
+                            <li><a href="achievements.html">Achievements</a>
+                            </li>
+                            <li><a href="televisionprogramme.html">Television Programmes</a>
+                            </li>
+                            </li>
+
+                            </li>
+                            <li><a href="contact.html">Contact Us</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- mobile menu close -->
+
+                    <!-- desktop menu begin -->
+                    <nav id="desktop-menu" class="site-desktop-menu hidden-xs hidden-sm pull-right">
+                        <ul class="clearfix">
+
+                            <li class="active"><a href="index.html">Home</a>
+                            </li>
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                                    role="button" aria-haspopup="true" aria-expanded="false">About
+                                Us<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="introduction.html">Introduction</a></li>
+                                    <li><a href="organization.html">Organizational Structure</a>
+                                    <!-- <li><a href="team.html">Staff Members</a></li> -->
+                                    <li><a href="technicalfacilities.html">Technical Facilities</a>
+                                </ul>
+                            </li>
+                            <li><a href="achievements.html">Achievements</a>
+                            </li>
+                            <li><a href="televisionprogramme.html">Television Programmes</span></a>
+                            </li>
+
+                            </li>
+
+                            </li>
+                            <li><a href="contact.html">Contact Us</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- desktop menu close -->
+
+                    <!-- Header Group Button Right begin -->
+                    <div class="header-buttons pull-right hidden-xs hidden-sm">
+
+                        <div class="header-contact">
+                            <ul class="clearfix">
+                                <li class="phone"><i class="fa fa-phone"></i> <span>+977-1-4276779, 4276648</span></li>
+                                <li class="border-line">|</li>
+
+                                <li class="phone"><i class="fa fa-envelope"></i> <span>info@watchdogmedia.com.np</span>
+                                </li>
+
+                            </ul>
+                        </div>
+
+
+                    </div>
+                    <!-- Header Group Button Right close -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
 
 <!----------------------------Carousel-----------------------------------
@@ -50,14 +146,14 @@
     <div class="ws_images">
         <ul>
 
-            <!--<li><img src="data1/images/3.jpg" alt="3" title="Shooting of weekly TV programme SAHABHAGITA in our studio"
+            <li><img src="data1/images/3.jpg" alt="3" title="Shooting of weekly TV programme SAHABHAGITA in our studio"
                      id="wows1_0"/></li>
             <li><img src="data1/images/4.jpg" alt=""
                      title="Workshop organized by Save the Children-CSANN-WMS on MSNP's progress after field visit"
-                     id="wows1_1"/></li>		
+                     id="wows1_1"/></li>
             <li><img src="data1/images/5.jpg" alt="5"
                      title="Certificate of Participation provided to the Participant at the end of training"
-                     id="wows1_2"/></li>  -->
+                     id="wows1_2"/></li>
             <li><img src="data1/images/6.jpg" alt="6"
                      title="Journalist training under the programme - Mass Awareness and Media Campaign, OXFAM-WMS"
                      id="wows1_3"/></li>
@@ -73,7 +169,7 @@
             <li><img src="data1/images/10.jpg" alt="10"
                      title="Street Drama on Legal Aid and Legal Awareness in Dailekh District, RoLHR (UNDP), WMS"
                      id="wows1_7"/></li>
-            <!--<li><img src="data1/images/11.jpg" alt="11" title="WMS Studio" id="wows1_8"/></li> -->
+            <li><img src="data1/images/11.jpg" alt="11" title="WMS Studio" id="wows1_8"/></li>
             <li><img src="data1/images/12.jpg" alt="12"
                      title="Photo session during the shooting for video toolkit production, UNDP-NSET-WMS"
                      id="wows1_9"/></li>
@@ -83,15 +179,12 @@
             <li><img src="data1/images/14.jpg" alt="14"
                      title="Shooting for video toolkit production for safe building practices, UNDP(CDRMP)-NSET-WMS"
                      id="wows1_11"/></li>
-			<li><img src="data1/images/21.jpg" alt="14"
-                     title="Shooting of weekly TV programme Bahasma Sarwajanik Shikshya in our studio"
-                     id="wows1_11"/></li>		 
-           <!-- <li><img src="data1/images/15.jpg" alt="15"
+            <li><img src="data1/images/15.jpg" alt="15"
                      title="Group photo, Journalist Training on Nutrition and Food Security at Makwanpur District"
-                     id="wows1_12"/></li>  
+                     id="wows1_12"/></li>
             <li><img src="data1/images/16.jpg" alt="16"
                      title="Interview with Mr. Blair Glencorse (Founder of Accountability Lab, USA) on Rupantaran Programme"
-                     id="wows1_13"/></li>  -->
+                     id="wows1_13"/></li>
             <li><img src="data1/images/17.jpg" alt="17"
                      title="Monitoring and Review of Multi-Sector Nutrition Plan (MSNP) Status in Jumla District, Save the Children, WMS"
                      id="wows1_14"/></li>
@@ -202,23 +295,18 @@
                         </div>
 
 
-                        <p>Watchdog Media Services (WMS) Pvt. Ltd. is a legally registered private agency at Office of the Company Registrar, Kathmandu and was established by the enthusiastic group of young and dynamic development journalists in 2006. The organization is a prominent media institution contributing to the process of social transformation through development journalism.
- </p>
+                        <p>Watchdog Media Services Pvt. Ltd. (WMS) is an organization established by an enthusiastic
+                            group of young and dynamic development journalists with the aim to contribute in the process
+                            of social transformation through development journalism. </p>
                         <ul class="list-style-1">
-                            <li>Eleven years of experience
-</li>
-                            <li>Training to media professionals
-</li>
-                            <li>IEC/BCC materials designing and production
-</li>
-                            <li>Broad network with different stakeholders
-</li>
-                            <li>Media research
-</li>
-                            <li>Documentary Production, Radio Program Production & PSA/Jingle/TVC Production
-</li>
-                            <li>Production of three weekly Television Programmes and their dissemination via National Television Channels
-
+                            <li>Eleven years of experience</li>
+                            <li>Training to media professionals</li>
+                            <li>IEC/BCC materials designing and production</li>
+                            <li>Broad network with different stakeholders</li>
+                            <li>Media research</li>
+                            <li>Documentary Production, Radio Program Production & PSA/Jingle/TVC Production</li>
+                            <li>Production of three weekly Television Programmes and
+                                their dissemination via National Television Channels
                             </li>
                         </ul>
                         <div class="divider-single"></div>
@@ -279,7 +367,7 @@
                         <div class="col-xs-10" style="padding-left: 16px;">
                             <h3>Training</h3>
 
-                            <p>Designing training curriculam and conducting training on communication, journalism and any
+                            <p>Designing training curricula and conducting training on communication, journalism and any
                                 aspects of media</p>
                         </div>
 
@@ -387,26 +475,42 @@
                     <div class="tiny-border"></div>
                 </div>
 
-                <?php  $imageprograms=getAllActiveListingProgram($conn);
-                        foreach ($imageprograms as $key => $imageprogram):?>
-
-                <div class="col-sm-4 col-md-4 col-xs-12 padd text-center" style="margin-left:100px;">
-                    
-                    <a href="televisionprogramme.php#Sankalpa-Sushanko Lagi">
+                <div class="col-sm-4 col-md-4 col-xs-12 padd text-center" style="margin-bottom: 20px;">
+                    <a href="televisionprogramme.html#sankalpa">
                         <div class="television">
                             <div class="layer hidden-xs"></div>
-                            <img src="admin/uploads/<?php echo$imageprogram['image_path'];?>" style="max-width: 100%;" alt="" width=350 px height=250 px>
+                            <img src="assets/img/programs/image_01.jpg" style="max-width: 100%;" alt="">
                         </div><!-- end television -->
                     </a>
-                    
                 </div>
 
 
-                 <?php endforeach; ?>
+                <div class="col-sm-4 col-md-4 col-xs-12 padd text-center" style="margin-bottom: 20px;">
+                    <a href="televisionprogramme.html#sahabhagita">
+                        <div class="television">
+                            <div class="layer hidden-xs"></div>
+                            <img src="assets/img/programs/image_03.jpg" style="max-width: 100%;" alt="">
+                        </div><!-- end television -->
+                    </a>
+                </div>
+
+                <div class="col-sm-4 col-md-4 col-xs-12 padd text-center" style="margin-bottom: 20px;">
+                    <a href="televisionprogramme.html#rupantaran">
+                        <div class="television">
+                            <div class="layer hidden-xs"></div>
+                            <img src="assets/img/programs/image_02.jpg" style="max-width: 100%;" alt="">
+                        </div><!-- end television -->
+                    </a>
+                </div>
+
+
+            </div>
         </div>
-    </div>
-               
+
+
     </section>
+
+
     <section id="section-partner">
         <div class="container">
             <div class="row">
@@ -416,20 +520,25 @@
 
                         <div class="tiny-border"></div>
                     </div>
-
-                    
                     <div class="col-md-12">
-
                         <div class="owl-carousel owl-item-3">
-                            <?php $partners=getAllActivePartners($conn);
-                          foreach ($partners as $key => $partner): 
-                     ?>
-                            <a href="<?php echo $partner['website']; ?>">
+
                             <div class="item text-center">
-                                <img src="admin/uploads/<?php echo $partner['image_path'];?>" alt="" width=200 px height=200 px/>
-                            </div> </a>
+                                <img src="assets/img/clients/client_logo3.png" alt=""/>
+                            </div>
                             <!-- end item -->
-                             <?php endforeach; ?>
+
+                            <div class="item text-center">
+                                <img src="assets/img/clients/client_logo2.png" alt=""/>
+                            </div>
+                            <!-- end item -->
+
+                            <div class="item text-center">
+                                <img src="assets/img/clients/client_logo1.png" alt=""/>
+                            </div>
+                            <!-- end item -->
+
+
                         </div>
                         <!-- end owl-item-3 -->
                     </div>
@@ -442,11 +551,98 @@
 </div>
 
 
-
+<footer class="footer-1 bg-color-1">
 
     <!-- main footer begin -->
-    
-<?php  include"layouts/footer.php";?>
+    <div class="main-footer">
+        <div class="container">
+            <div class="row">
+
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="compact-widget">
+                        <h4 class="widget-title">Contact Us</h4>
+
+                        <div class="widget-inner">
+                            <p>Mathuri Sadan, Ravibhawan <br>Kathmandu, Nepal</p>
+
+                            <p>Phone: +977-1-4276779, 4276648</p>
+
+                            <p style="display: inline-block; vertical-align: top;">Email:
+                            <ul style="display: inline-block;" class="email-detail">
+                                <li>info@watchdogmedia.com.np</li>
+                                <li>watchdogmedia2000@gmail.com</li>
+                            </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="compact-widget">
+                        <h4 class="widget-title">Links</h4>
+
+                        <div class="widget-inner">
+                            <ul>
+                                <li><a href="introduction.html">About Us</a></li>
+                                <li><a href="achievements.html">Achievements</a></li>
+                                <li><a href="televisionprogramme.html">Television Programmes</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="compact-widget">
+                        <div class="widget-inner">
+                            <h4 class="widget-title">Connect with us</h4>
+
+                            <p>Join us on social media to get latest updates</p>
+
+                            <div class="social-icons clearfix">
+                                <a href="https://www.youtube.com/channel/UCSEe7Wg8_L2A4jZbiMB6Pgg" target="_blank"
+                                   class="youtube"><i class="fa fa-youtube-play"></i></a>
+
+                                <a href="https://www.facebook.com/Watchdog-Media-Services-PvtLtd-173668536125078"
+                                   target="_blank" class="facebook"><i class="fa fa-facebook"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- main footer close -->
+
+    <!-- sub footer begin -->
+    <div class="sub-footer">
+        <div class="container">
+            <div class="row hidden-xs hidden-sm">
+                <div class="col-md-8" style="text-align: right;">
+                    Copyright © 2016 Watchdog Media Services. All Rights Reserved.</span>
+                </div>
+                <div class="col-md-4" style="text-align: right;">
+                    <span class="orange" style="font-size: 13px;">Powered by <a href="https://www.vedantaitech.com" target="_blank">Vedanta InfoTech & Research Center</a>.</span>
+                </div>
+            </div>
+            <div class="row hidden-md hidden-lg">
+                <div class="col-md-8">
+                    Copyright © 2016 Watchdog Media Services. All Rights Reserved.</span>
+                </div>
+                <div class="col-md-4">
+                    <span class="orange" style="font-size: 13px;">Powered by <a href="https://www.vedantaitech.com" target="_blank">Vedanta InfoTech & Research Center</a>.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- sub footer close -->
+
+</footer>
+
 
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>

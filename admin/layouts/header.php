@@ -11,7 +11,7 @@ if(!checkAdminLogin())
 <!-- Mirrored from 198.74.61.72/themes/preview/ace/ by HTTrack Website Copier/3.x [XR&CO'2013], Fri, 28 Feb 2014 17:44:06 GMT -->
 <head>
 		<meta charset="utf-8" />
-		<title>Dashboard - SEDS Admin</title>
+		<title>Dashboard - WDM Admin</title>
 
 		<meta name="description" content="overview &amp; stats" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -66,7 +66,7 @@ if(!checkAdminLogin())
 					<a href="dashboard.php" class="navbar-brand">
 						<small>
 							<i class="icon-leaf"></i>
-							MMT Admin
+							watchdogMedia Admin
 						</small>
 					</a><!-- /.brand -->
 				</div><!-- /.navbar-header -->

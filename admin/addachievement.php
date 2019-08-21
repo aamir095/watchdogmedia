@@ -6,9 +6,7 @@
  		
  	if(addachievement($conn,$_POST))
  	{
- 	
- 		
- 		showMsg('New Achievement Added Successfully.','success');
+ 	    showMsg('New Achievement Added Successfully.','success');
  		redirection('manageachievements.php');
  	}
  }
@@ -81,7 +79,7 @@
 						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Achievement Description</label>
 
 						<div class="col-sm-9">
-							<textarea name="achievement_description" id="editor3" rows="10" cols="80" class="col-xs-10 col-sm-5" placeholder="abc">
+							<textarea name="achievement_description" id="editor3" rows="10" cols="80" class="col-xs-10 col-sm-5" placeholder="Description of the achievement">
                
             </textarea>
             <script>
@@ -170,6 +168,35 @@
 						</div>
 					</div>
 
+					<div class="space-4"></div>
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-2">Work Done In Project:</label>
+
+						<div class="col-sm-9">
+							<input type="text" name="start_year" required id="form-field-2" placeholder="Start date in year of project" class="col-xs-10 col-sm-5" />
+							
+						</div>
+						<br> </br>
+					<div class="space-4"></div>
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-2"></label>
+
+						<div class="col-sm-9">
+							<input type="text" name="start_year" required id="form-field-2" placeholder="Start date in year of project" class="col-xs-10 col-sm-5" />
+							
+						</div>	
+						</div>
+
+						<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-2"></label>
+
+						<div class="col-sm-9">
+							<input type="text" name="start_year" required id="form-field-2" placeholder="Start date in year of project" class="col-xs-10 col-sm-5" />
+							
+						</div>	
+						</div>
 					<div class="space-4"></div>
 					<div class="form-group">
 						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Status </label>
@@ -555,6 +582,10 @@
 		alert(html_var);
 		$(this).parent().append(html_var);
 		});
+		By using our site, you acknowledge that you have read and understand our Cookie Policy, Privacy Policy, and our Terms of Service.
+ 
+
+
 		</script>
 		</body>
 

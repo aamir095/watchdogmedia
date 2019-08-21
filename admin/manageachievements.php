@@ -106,9 +106,7 @@
 
 		<td>
 			<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
-				<a class="blue" href="#">
-					<i class="icon-zoom-in bigger-130"></i>
-				</a>
+				
 
 				<a class="green" href="updateachievement.php?ref=<?php echo $user['id']; ?>">
 					<i class="icon-pencil bigger-130"></i>

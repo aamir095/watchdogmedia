@@ -1,6 +1,4 @@
-
 <footer class="footer-1 bg-color-1">
-
     <!-- main footer begin -->
     <div class="main-footer">
         <div class="container">
@@ -32,10 +30,10 @@
 
                         <div class="widget-inner">
                             <ul>
-                                <li><a href="introduction.html">About Us</a></li>
-                                <li><a href="achievements.html">Achievements</a></li>
-                                <li><a href="televisionprogramme.html">Television Programmes</a></li>
-                                <li><a href="contact.html">Contact Us</a></li>
+                                <li><a href="introduction.php">About Us</a></li>
+                                <li><a href="achievements.php">Achievements</a></li>
+                                <li><a href="televisionprogramme.php">Television Programmes</a></li>
+                                <li><a href="contact.php">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -90,15 +88,3 @@
     <!-- sub footer close -->
 
 </footer>
-
-
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/owl.carousel.js"></script>
-<script src="assets/js/main.js"></script>
-<script type="text/javascript" src="engine1/wowslider.js"></script>
-<script type="text/javascript" src="engine1/script.js"></script>
-
-
-</body>
-</html>

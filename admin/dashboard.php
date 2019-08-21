@@ -50,7 +50,7 @@
 
 									Welcome to
 									<strong class="green">
-									myMysticTrip.com										
+									WatchDog Media Group										
 									</strong>
 									 <?php $greeting=date('A');
 									 	   if($greeting=="PM")
