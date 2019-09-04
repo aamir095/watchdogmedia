@@ -5,7 +5,6 @@ include 'connect.php';
 include 'helpers.php';
 include 'loginfunctions.php';
 include 'userfunctions.php';
-include 'tourpackages.php';
 include 'partnerfunctions.php';
 include 'programfunction.php';
 include 'imagesliderfunctions.php';

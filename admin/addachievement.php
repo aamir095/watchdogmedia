@@ -62,7 +62,7 @@
 
 				<form class="form-horizontal" method="POST" role="form" enctype="multipart/form-data">
 					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Title </label>
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Title:</label>
 
 						<div class="col-sm-9">
 							<input type="text" name="title" id="form-field-1" required placeholder="Title of the achievement" class="col-xs-10 col-sm-5" />
@@ -76,7 +76,7 @@
 				
 					<div class="space-4"></div>
 					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Achievement Description</label>
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Achievement Description:</label>
 
 						<div class="col-sm-9">
 							<textarea name="achievement_description" id="editor3" rows="10" cols="80" class="col-xs-10 col-sm-5" placeholder="Description of the achievement">
@@ -129,7 +129,7 @@
 					<div class="space-4"></div>
 
 					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">End Date Year</label>
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">End Date Year:</label>
 
 						<div class="col-sm-9">
 							<input type="text" name="end_year" id="form-field-1"  placeholder="End date in  year of project" class="col-xs-10 col-sm-5" />
@@ -161,30 +161,20 @@
 					<div class="space-4"></div>
 
 					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Client</label>
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Client:</label>
 
 						<div class="col-sm-9">
 							<input type="text" name="client" id="form-field-1" required placeholder="Name of client" class="col-xs-10 col-sm-5" />
 						</div>
 					</div>
 
-					<div class="space-4"></div>
+					
 
 					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-2">Work Done In Project:</label>
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-2">Works In Project:</label>
 
 						<div class="col-sm-9">
-							<input type="text" name="start_year" required id="form-field-2" placeholder="Start date in year of project" class="col-xs-10 col-sm-5" />
-							
-						</div>
-						<br> </br>
-					<div class="space-4"></div>
-
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-2"></label>
-
-						<div class="col-sm-9">
-							<input type="text" name="start_year" required id="form-field-2" placeholder="Start date in year of project" class="col-xs-10 col-sm-5" />
+							<input type="text" name="work_1"  id="form-field-2" placeholder="1st work in project" class="col-xs-10 col-sm-5" />
 							
 						</div>	
 						</div>
@@ -193,10 +183,36 @@
 						<label class="col-sm-3 control-label no-padding-right" for="form-field-2"></label>
 
 						<div class="col-sm-9">
-							<input type="text" name="start_year" required id="form-field-2" placeholder="Start date in year of project" class="col-xs-10 col-sm-5" />
+							<input type="text" name="work_2"  id="form-field-2" placeholder="2nd work in project" class="col-xs-10 col-sm-5" />
 							
 						</div>	
 						</div>
+
+						<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-2"></label>
+
+						<div class="col-sm-9">
+							<input type="text" name="work_3"  id="form-field-2" placeholder="3rd work in project" class="col-xs-10 col-sm-5" />
+							
+						</div>	
+						</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-2"></label>
+
+						<div class="col-sm-9">
+							<input type="text" name="work_4"  id="form-field-2" placeholder="4th work in project" class="col-xs-10 col-sm-5" />
+							
+						</div>	
+						</div>
+						<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-2"></label>
+
+						<div class="col-sm-9">
+							<input type="text" name="work_5"  id="form-field-2" placeholder="5th work in project" class="col-xs-10 col-sm-5" />
+							
+						</div>	
+						</div>
+					
 					<div class="space-4"></div>
 					<div class="form-group">
 						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Status </label>

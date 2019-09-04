@@ -171,6 +171,49 @@ $user = getAchievementById($conn,$userId);
 						</div>
 					</div>
 
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-2">Works In Project:</label>
+
+						<div class="col-sm-9">
+							<input type="text" name="work_1"  id="form-field-2" value="<?php echo $user['work_1']; ?>" placeholder="1st work in project" class="col-xs-10 col-sm-5" />
+							
+						</div>	
+						</div>
+
+						<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-2"></label>
+
+						<div class="col-sm-9">
+							<input type="text" name="work_2" value="<?php echo $user['work_2']; ?>" id="form-field-2" placeholder="2nd work in project" class="col-xs-10 col-sm-5" />
+							
+						</div>	
+						</div>
+
+						<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-2"></label>
+
+						<div class="col-sm-9">
+							<input type="text" name="work_3" value="<?php echo $user['work_3']; ?>" id="form-field-2" placeholder="3rd work in project" class="col-xs-10 col-sm-5" />
+							
+						</div>	
+						</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-2"></label>
+
+						<div class="col-sm-9">
+							<input type="text" name="work_4" value="<?php echo $user['work_4']; ?>" id="form-field-2" placeholder="4th work in project" class="col-xs-10 col-sm-5" />
+							
+						</div>	
+						</div>
+						<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-2"></label>
+
+						<div class="col-sm-9">
+							<input type="text" name="work_5" value="<?php echo $user['work_5']; ?>" id="form-field-2" placeholder="5th work in project" class="col-xs-10 col-sm-5" />
+							
+						</div>	
+						</div>
+					
 					<div class="space-4"></div>
 
 					<div class="form-group">

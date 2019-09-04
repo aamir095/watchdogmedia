@@ -1,3 +1,9 @@
+<?php
+$messages=seeMessage($conn);
+foreach ($messages as $key => $message){
+}
+	
+?>
 <div class="sidebar" id="sidebar">
 					<script type="text/javascript">
 						try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
@@ -14,7 +20,7 @@
 						</li>
 
 						<li>
-							<a href="#" class="dropdown-toggle">
+							<a  class="dropdown-toggle">
 								<i class="icon-user"></i>
 								<span class="menu-text"> Admin Users </span>
 
@@ -40,37 +46,11 @@
 							</ul>
 						</li>
 
-						<li>
-							<a href="#" class="dropdown-toggle">
-								<i class="icon-folder-close "></i>
-								<span class="menu-text">Gallery </span>
-
-								<b class="arrow icon-angle-down"></b>
-							</a>
-
-							<ul class="submenu">
-								<li>
-									<a href="addgallery.php">
-										<i class="icon-double-angle-right"></i>
-										Add Gallery
-									</a>
-								</li>
-
-								<li>
-									<a href="managegallery.php">
-										<i class="icon-double-angle-right"></i>
-										Manage Gallery
-									</a>
-								</li>
-
-								
-							</ul>
-						</li>
-
+						
 
 					<ul class="nav nav-list">
 						<li>
-							<a href="#" class="dropdown-toggle">
+							<a class="dropdown-toggle">
 								<i class="icon-desktop"></i>
 								<span class="menu-text">TV Program</span>
 
@@ -152,39 +132,7 @@
 						</li>
 
 
-
-
-
-					<ul class="nav nav-list">
-						<li>
-							<a href="#" class="dropdown-toggle">
-								<i class="icon-group"></i>
-								<span class="menu-text">Tour Packages</span>
-
-								<b class="arrow icon-angle-down"></b>
-							</a>
-
-							<ul class="submenu">
-								<li>
-									<a href="addpackage.php">
-										<i class="icon-double-angle-right"></i>
-										Add Package
-									</a>
-								</li>
-
-								<li>
-									<a href="managepackages.php">
-										<i class="icon-double-angle-right"></i>
-										Manage Packages
-									</a>
-								</li>
-
-								
-							</ul>
-						</li>
-
-						
-						<ul class="nav nav-list">
+                    <ul class="nav nav-list">
 						<li>
 							<a href="#" class="dropdown-toggle">
 								<i class="icon-certificate"></i>
@@ -212,51 +160,32 @@
 							</ul>
 						</li>
 
-
-						<ul class="nav nav-list">
-						<li>
-							<a href="#" class="dropdown-toggle">
-								<i class="icon-fire"></i>
-								<span class="menu-text">Project Category </span>
-
-								<b class="arrow icon-angle-down"></b>
-							</a>
-
-							<ul class="submenu">
-								<li>
-									<a href="addcategory.php">
-										<i class="icon-double-angle-right"></i>
-										Add Category
-									</a>
-								</li>
-
-								<li>
-									<a href="managecategory.php">
-										<i class="icon-double-angle-right"></i>
-										Manage Category
-									</a>
-								</li>
-
-								
-							</ul>
-						</li>
-
-
-						<ul class="nav nav-list">
+                      
+                      <ul class="nav nav-list">
 						<li>
 							<a href="#" class="dropdown-toggle">
 								<i class="icon-comment"></i>
-								<span class="menu-text">Messages</span>
+								<?php 
+							
+								if($message){?>
 
+								<span  style="color:red" class="menu-text">Messages</span>
+							
+							<?php echo  "   (".$message.")";
+							} 
+							else { ?> <span class="menu-text">Messages</span> <?php } ?>
 								<b class="arrow icon-angle-down"></b>
 							</a>
 
 							<ul class="submenu">
 								<li>
-									<a href="managemessage.php">
+									
+									
+									<a href="managemessage.php" >
 										<i class="icon-double-angle-right"></i>
 										View Message
 									</a>
+								
 								</li>
 
 								
@@ -273,5 +202,9 @@
 
 					<script type="text/javascript">
 						try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+
+						
 					</script>
+
 				</div>
+				

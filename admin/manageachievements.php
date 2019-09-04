@@ -65,6 +65,7 @@
 		<th>Start Date</th>
 		<th>End Date</th>
 		<th>Client</th>
+		<th>Works Done</th>
 		<th class="hidden-480">Status</th>
 		<th>Action</th>
 		</tr>
@@ -95,6 +96,7 @@
 			<td><?php echo $user['end_month'].",".$user['end_year']; ?></td>
 	<?php endif; ?>
 		<td><?php echo $user['client']; ?></td>
+		<td><?php echo $string=substr($user['work_1']."".$user['work_2']."".$user['work_3'],0,80)."...";?></td>
 		
 		<td class="hidden-480">
 			<?php if($user['status']=='ongoing'): ?>

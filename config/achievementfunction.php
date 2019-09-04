@@ -3,7 +3,7 @@
 
 function addachievement($conn,$data){
 
-	$stmt = $conn->prepare("INSERT INTO mmt_achievement(`title`, `achievement_description`, `start_year`, `start_month`, `end_year`, `client`, `end_month`,`status`) VALUES (:title, :achievement_description, :start_year, :start_month, :end_year, :client,:end_month, :status)");
+	$stmt = $conn->prepare("INSERT INTO mmt_achievement(`title`, `achievement_description`, `start_year`, `start_month`, `end_year`, `client`, `end_month`, `work_1`, `work_2`, `work_3`, `work_4`,`work_5`,`status`) VALUES (:title, :achievement_description, :start_year, :start_month, :end_year, :client,:end_month,  :work_1, :work_2, :work_3,:work_4, :work_5,:status)");
 	$stmt->bindParam(':title',$data['title']);
 	$stmt->bindParam(':achievement_description',$data['achievement_description']);
 	$stmt->bindParam(':start_year',$data['start_year']);
@@ -11,6 +11,11 @@ function addachievement($conn,$data){
 	$stmt->bindParam(':end_year',$data['end_year']);
 	$stmt->bindParam(':client',$data['client']);
 	$stmt->bindParam(':end_month',$data['end_month']);
+	$stmt->bindParam(':work_1',$data['work_1']);
+	$stmt->bindParam(':work_2',$data['work_2']);
+	$stmt->bindParam(':work_3',$data['work_3']);
+	$stmt->bindParam(':work_4',$data['work_4']);
+	$stmt->bindParam(':work_5',$data['work_5']);
 	$stmt->bindParam(':status',$data['status']);
 	
 
@@ -23,7 +28,29 @@ function addachievement($conn,$data){
 
 function getAllAchievements($conn)
 {
-	$stmt= $conn->prepare("SELECT * FROM mmt_achievement");
+	$stmt= $conn->prepare("SELECT * FROM mmt_achievement ORDER BY id DESC");
+	$stmt->execute();
+	$stmt->setFetchMode(PDO::FETCH_ASSOC); 
+	if($stmt->rowCount()>0)
+	return $stmt->fetchAll();
+
+	return false;
+}
+function getAllEvenAchievements($conn)
+{
+
+	$stmt= $conn->prepare("SELECT * FROM mmt_achievement WHERE id % 2=0");
+	$stmt->execute();
+	$stmt->setFetchMode(PDO::FETCH_ASSOC); 
+	if($stmt->rowCount()>0)
+	return $stmt->fetchAll();
+
+	return false;
+}
+function getAllOddAchievements($conn)
+{
+
+	$stmt= $conn->prepare("SELECT * FROM mmt_achievement WHERE id % 2=1");
 	$stmt->execute();
 	$stmt->setFetchMode(PDO::FETCH_ASSOC); 
 	if($stmt->rowCount()>0)
@@ -48,7 +75,7 @@ function updateAchievement($conn,$data)
 	
 	
 
-		$stmt = $conn->prepare("UPDATE mmt_achievement SET title=:title, achievement_description=:achievement_description, start_year=:start_year, start_month=:start_month, end_year=:end_year, end_month=:end_month, client=:client, status=:status WHERE id=:id");
+		$stmt = $conn->prepare("UPDATE mmt_achievement SET title=:title, achievement_description=:achievement_description, start_year=:start_year, start_month=:start_month, end_year=:end_year, end_month=:end_month, client=:client, work_1=:work_1, work_2=:work_2, work_4=:work_4, work_3=:work_3, work_5=:work_5,status=:status WHERE id=:id");
 		$stmt->bindParam(':title',$data['title']);
 		$stmt->bindParam(':achievement_description',$data['achievement_description']);
 		$stmt->bindParam(':start_year',$data['start_year']);
@@ -56,6 +83,11 @@ function updateAchievement($conn,$data)
 		$stmt->bindParam(':end_year',$data['end_year']);
 		$stmt->bindParam(':client',$data['client']);
 		$stmt->bindParam(':end_month',$data['end_month']);
+		$stmt->bindParam(':work_1',$data['work_1']);
+		$stmt->bindParam(':work_2',$data['work_2']);
+		$stmt->bindParam(':work_3',$data['work_3']);
+		$stmt->bindParam(':work_4',$data['work_4']);
+		$stmt->bindParam(':work_5',$data['work_5']);
 		$stmt->bindParam(':status',$data['status']);
 		$stmt->bindParam(':id',$data['id']);
 		if($stmt->execute())

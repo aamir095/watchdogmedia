@@ -36,9 +36,9 @@
 <div class="breadcrumbs style1 hidden-sm hidden-md hidden-lg">
     <div class="container">
         <ul class="text-center no-padding">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li>/</li>
-            <li><a href="index.html">Achievements</a></li>
+            <li><a href="index.php">Achievements</a></li>
             <li>/</li>
             <li class="active">Running Project and Past Experiences</li>
         </ul>
@@ -54,7 +54,7 @@
             <li class="active" >Running Project and Past Experiences</li>
         </ul>
         <ul class="pull-right">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li>/</li>
             <li class="active">Running Project and Past Experiences</li>
 

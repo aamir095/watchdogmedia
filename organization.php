@@ -42,7 +42,7 @@
 <div class="breadcrumbs style1 hidden-sm hidden-md hidden-lg">
     <div class="container">
         <ul class="text-center no-padding">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li>/</li>
             <li><a href="">About Us</a></li>
             <li>/</li>
@@ -60,7 +60,7 @@
             <li class="active" >Organizational Structure</li>
         </ul>
         <ul class="pull-right">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li>/</li>
             <li><a href="">About Us</a></li>
             <li>/</li>

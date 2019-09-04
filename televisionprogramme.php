@@ -76,7 +76,7 @@
 <div class="breadcrumbs style1 hidden-sm hidden-md hidden-lg">
     <div class="container">
         <ul class="text-center no-padding">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li>/</li>
             <li class="active">Television Programmes</li>
         </ul>
@@ -91,7 +91,7 @@
             <li class="active" >Television Programmes</li>
         </ul>
         <ul class="pull-right">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li>/</li>
             <li class="active">Television Programmes</li>
         </ul>
@@ -114,25 +114,26 @@
                 <div class="col-md-12 text-center">
 
                     <p class="intro-text">Television programme production and dissemination is one of the key areas of WMS. It has been continuing this task since its inception period. The organization has experiences working with dozens of TV channels of Nepal in this regard. Through these TV programmes the organizations has been contributing to aware, advocate and educate the people about various issues of development. The organization has long-term partnership with Nepal Television, Avenues Television and Sagarmatha Television. We are continuously producing and disseminating regular TV programmes.
- </p>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
     <!-- section close -->
 
-<?php $programinpages=getProgramInPage($conn);
-    foreach ($programinpages as $key => $programinpage):
-    ?>
     <section id="section-partner" class="">
         <!--<div class="container">-->
 
-        <div class="row content" id="sankalpa">
-            <div class="container">
+<?php $programinpages=getProgramInPage($conn);
+    foreach ($programinpages as $key => $programinpage):
+    ?>
 
-            <div class="col-md-3">
-                    <img src="admin/uploads/<?php echo $programinpage['image_path']; ?>" class="img-responsive" alt="" style="margin-top:20px;"/>
-                </div>
+        <div class="row content" id="<?php echo $programinpage['tv_title'];?>">
+            
+            <div class="container">
+                <div class="col-md-3">
+                <img src="admin/uploads/<?php echo $programinpage['image_path']; ?>" class="img-responsive" alt="" />
+            </div>
 
 
 
@@ -143,14 +144,16 @@
 
                 </div>
 
-              
+                 
             </div>
+           
+         
         </div>
-
+ <?php endforeach;?>
         
 
 
-<?php endforeach;?>
+
 
 </section>
 

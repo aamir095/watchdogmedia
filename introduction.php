@@ -56,7 +56,7 @@
             <li class="active" >Introduction</li>
         </ul>
         <ul class="pull-right">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li>/</li>
             <li><a href=>About Us</a></li>
             <li>/</li>
@@ -157,7 +157,7 @@
     </section>
     <!-- section close -->
 
-    <section id="section-partner" class="bg-grey">
+   <section id="section-partner">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -166,28 +166,20 @@
 
                         <div class="tiny-border"></div>
                     </div>
+
+                    
                     <div class="col-md-12">
+
                         <div class="owl-carousel owl-item-3">
-
+                            <?php $partners=getAllActivePartners($conn);
+                          foreach ($partners as $key => $partner): 
+                     ?>
+                            <a href="<?php echo $partner['website']; ?>">
                             <div class="item text-center">
-                                <img src="assets/img/clients/client_logo3.png" alt=""/>
-                            </div>
+                                <img src="admin/uploads/<?php echo $partner['image_path'];?>" alt="" width=200 px height=200 px/>
+                            </div> </a>
                             <!-- end item -->
-
-                            <div class="item text-center">
-                                <img src="assets/img/clients/client_logo2.png" alt=""/>
-                            </div>
-                            <!-- end item -->
-
-
-                            <div class="item text-center">
-                                <img src="assets/img/clients/client_logo1.png" alt=""/>
-                            </div>
-                            <!-- end item -->
-
-
-
-
+                             <?php endforeach; ?>
                         </div>
                         <!-- end owl-item-3 -->
                     </div>
@@ -195,7 +187,6 @@
             </div>
         </div>
     </section>
-
 
 </div>
 

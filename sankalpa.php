@@ -64,9 +64,9 @@
             <li class="active" style="font-weight: 600;">Rupantaran</li>
         </ul>
         <ul class="pull-right">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li>/</li>
-            <li><a href="television_programme.html">Television Programme</a></li>
+            <li><a href="television_programme.php">Television Programme</a></li>
             <li>/</li>
             <li class="active">Sankalpa</li>
         </ul>

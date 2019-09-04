@@ -35,12 +35,22 @@
 
 <!----------------------------Header-----------------------------------
 ------------------------------------------------------------------------->
-<?php include'layouts/header.php'; ?> 
+<?php include'layouts/header.php'; 
+      if (isset($_POST['submit']))
+    {
+
+      if(insertMessage($conn,$_POST))
+      {
+      showMsg('We received your query.','success');
+      displayMsg();
+      }  
+    }
+?> 
 <!-- Breadcrumbs -->
 <div class="breadcrumbs style1 hidden-sm hidden-md hidden-lg">
     <div class="container">
         <ul class="text-center no-padding">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li>/</li>
             <li class="active">Contact Us</li>
         </ul>
@@ -56,7 +66,7 @@
             <li class="active">Contact Us</li>
         </ul>
         <ul class="pull-right">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li>/</li>
             <li class="active">Contact</li>
         </ul>
@@ -87,21 +97,23 @@
                     <div class="tiny-border"></div>
 
 
-                        <form action="" class="wpcf7-form margin-bottom-30">
+                        <form action="" class="wpcf7-form margin-bottom-30" method="POST">
                             <div class="col-one-third">
-                                <input type="text" placeholder="Your Name">
+                                <input type="text" name="name" required placeholder="Your Name">
                             </div>
                             <div class="col-one-third margin-one-third">
-                                <input type="email" placeholder="Your Email">
+                                <input type="email" name="email" placeholder="Your Email">
                             </div>
                             <div class="col-one-third">
-                                <input type="text" placeholder="Your Phone">
-                            </div>
-                            <div class="col-full"><textarea placeholder="Your Message"></textarea></div>
+                                <input type="text" name="telephone" required placeholder="Your Phone">
+                                </div>
+                                    
+                            <div class="col-full"><textarea name="message" placeholder="Your Message"></textarea></div>
                             <div class="clearfix"></div>
+                            <input type="hidden" name="view" value="1">
                             <div class="text-center">
                                 <div class="divider-single"></div>
-                                <button class="btn btn-primary btn-big">Send Email</button>
+                                <button value="submit" name="submit"class="btn btn-primary btn-big">Send Email</button>
                             </div>
                         </form>
                     </div>
