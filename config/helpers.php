@@ -8,7 +8,8 @@ function dd($data)
 
 function redirect($path)
 {
-	return header('location:'.$path);
+	return header('Location:'.$path);
+	die();
 }
 
 function redirection($path)

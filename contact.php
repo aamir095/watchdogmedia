@@ -38,7 +38,10 @@
 <?php include'layouts/header.php'; 
       if (isset($_POST['submit']))
     {
-
+      $msg='Name:' . $_POST['name']."\n"
+        .'Email:'.$_POST['email']."\n"
+        .'Message:'.$_POST['message'];
+mail('info@watchdogmedia.com.np','Sample header',$msg);
       if(insertMessage($conn,$_POST))
       {
       showMsg('We received your query.','success');

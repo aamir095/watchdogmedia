@@ -1,7 +1,6 @@
 <?php
 include '../config/call.php';
-//dd($_SESSION['f_name']//);
-//dd($_SESSION['email'])//;
+
 if(!checkAdminLogin())
 	redirect('login.php');
 ?>

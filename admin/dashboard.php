@@ -1,5 +1,8 @@
-<?php include 'layouts/header.php';
-	$grit=''; ?>
+<?php
+
+ include 'layouts/header.php';
+	$grit='';
+ ?>
 		<div class="main-container" id="main-container">
 			<script type="text/javascript">
 				try{ace.settings.check('main-container' , 'fixed')}catch(e){}

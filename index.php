@@ -37,9 +37,10 @@
 
 <!----------------------------Header-----------------------------------
 ------------------------------------------------------------------------->
-<?php include'layouts/header.php'; 
+<?php 
+      include'layouts/header.php';
       $images=getAllActiveImages($conn);
-      foreach ($images as $key => $image)
+     
 ?> 
 
 

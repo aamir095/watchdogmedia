@@ -19,16 +19,22 @@ function getLoginDetail($conn,$data)
 		return true;
 	
 		}
+		else
+		{
+			return false;
 			}
+		}
 }
 
 
 function checkAdminLogin()
 {
 	if(isset($_SESSION['email']) && isset($_SESSION['role']))
+	{
 	return true;
 
 	return false;
+}
 }
 
 function logout(){

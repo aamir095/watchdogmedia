@@ -3,7 +3,7 @@ $msg='';
 include '../config/call.php';
 
 if(checkAdminLogin())
-	redirect('dashboard.php');
+	redirect('login.php');
 
 if(isset($_POST['loginbtn']))
 {
